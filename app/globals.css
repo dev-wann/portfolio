@@ -1,11 +1,15 @@
 body {
   margin: 0px;
-  background-color: black;
   -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
 }
 
 .welcome {
@@ -20,4 +24,8 @@ body {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+.disableScroll{
+  overflow: hidden;
 }
