@@ -1,0 +1,52 @@
+.scroll {
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+}
+
+.scroll > p {
+  color: white;
+  opacity: 0.8;
+  font-size: 0.8rem;
+  font-weight: 300;
+  transition: 300ms;
+}
+
+.scroll > div {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url('/img/down_arrow.png') 50% 50% no-repeat;
+  background-size: 35px 35px;
+  filter: invert(100%);
+}
+
+.scroll > div:nth-child(1) {
+  animation: scrolldown 1300ms 650ms linear infinite;
+  animation-fill-mode: backwards;
+}
+  
+.scroll > div:nth-child(2) {
+  animation: scrolldown 1300ms linear infinite;
+}
+
+@keyframes scrolldown {
+    0% {
+        top: 18px;
+        opacity: 0;
+    }
+
+    50% {
+        top: 35px;
+        opacity: 0.3;
+    }
+
+    100% {
+        top: 50px;
+        opacity: 0;
+    }
+}

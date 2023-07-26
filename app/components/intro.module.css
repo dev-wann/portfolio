@@ -1,0 +1,32 @@
+.container {
+    display:flex;
+    flex-wrap: wrap;
+    /* position: fixed; */
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.item {
+    position: relative;
+    width: 33.3%;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.content {
+    z-index: -1;
+    position: fixed;
+}
+
+.background {
+    z-index: -2;
+    position: fixed;
+}
+
+.scrollThr {
+    height: 300px;
+}

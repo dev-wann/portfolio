@@ -1,5 +1,7 @@
 body {
   margin: 0px;
+  background-color: black;
+  color:white;
   -ms-overflow-style: none;
 }
 
@@ -10,6 +12,8 @@ body {
 .wrapper {
   width: 100vw;
   height: 100vh;
+  min-width: 800px;
+  margin: auto;
 }
 
 .welcome {
