@@ -1,32 +1,80 @@
-.container {
-    display:flex;
-    flex-wrap: wrap;
-    /* position: fixed; */
-    top: 0px;
+.introWrapper {
     width: 100vw;
-    height: 100vh;
+    height: 350vh;
+}
+
+.stickyWrapper {
+    width: 100vw;
+    height: 50vh;
+    position: sticky;
+    top: 0px;
+    z-index: -1;
+}
+
+.topPlaceHolder {
+    height: 40vh;
+}
+
+.bottomPlaceHolder {
+    height: 50vh;
+}
+
+.title {
+    position: sticky;
+    top: 15vh;
+    left: 50vw;
+    height: 45vh;
+    text-align: center;
+    z-index: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position:relative;
+    top: 40vh;
+    padding: 20px;
+}
+
+.subTitle {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60px;
+}
+
+.description {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.description > p {
+    position: absolute;
+}
+.description > p:nth-child(2) {
+    opacity: 0;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .item {
     position: relative;
-    width: 33.3%;
+    width: 33.3333%;
+    height: 100vh;
 }
 
-.title {
-    width: 100%;
-    text-align: center;
+#item1 {
+    left: 33.3333%;
 }
 
-.content {
-    z-index: -1;
-    position: fixed;
-}
-
-.background {
-    z-index: -2;
-    position: fixed;
-}
-
-.scrollThr {
-    height: 300px;
+#item3 {
+    left: 66.6666%;
 }

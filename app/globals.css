@@ -12,7 +12,6 @@ body {
 .wrapper {
   width: 100vw;
   height: 100vh;
-  min-width: 800px;
   margin: auto;
 }
 
@@ -32,4 +31,8 @@ body {
 
 .disableScroll{
   overflow: hidden;
+}
+
+p {
+  transition: all 1s;
 }
