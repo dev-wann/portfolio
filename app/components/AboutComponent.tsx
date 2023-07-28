@@ -2,7 +2,7 @@ import styles from './about.module.css';
 
 export default function AboutComponent() {
   return (
-    <div className={`wrapper ${styles.background}`}>
+    <div className="wrapper">
       <h2>Who am I?</h2>
       <h1>새로움을 찾아 헤메는 개발자</h1>
       <h1>조승완입니다.</h1>

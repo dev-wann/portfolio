@@ -1,6 +1,64 @@
-// intersection observer for scrollThrs;
+import styles from '/app/components/intro.module.css';
+
 export function initIntroObserver() {
+  observeTitle();
+  observeBackground();
+  observeDescriptionText();
+}
+
+function observeTitle() {
   const introTitle = document.getElementById('introTitle');
+  const firstBackground = document
+    .getElementsByClassName(styles.background)
+    .item(0);
+
+  // undefined check
+  if (!introTitle || !firstBackground) return;
+
+  // callback for observer
+  const changeTitleSize = (
+    entries: IntersectionObserverEntry[],
+    _observer: IntersectionObserver
+  ) => {
+    entries.forEach((entry) => {
+      if (entry.target !== firstBackground) return;
+      if (entry.isIntersecting) introTitle.style.fontSize = '5vh';
+      else introTitle.style.fontSize = '10vh';
+    });
+  };
+
+  const observer = new IntersectionObserver(changeTitleSize, {
+    threshold: 0.3,
+  });
+  observer.observe(firstBackground);
+}
+
+function observeBackground() {
+  // callback for observer
+  const showBackground = (
+    entries: IntersectionObserverEntry[],
+    _observer: IntersectionObserver
+  ) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        (entry.target as HTMLElement).style.opacity = '1';
+      } else {
+        (entry.target as HTMLElement).style.opacity = '0';
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(showBackground, {
+    threshold: 0.5,
+  });
+
+  const backgrounds = document.getElementsByClassName(styles.background);
+  for (let i = 0; i < backgrounds.length; i += 1) {
+    observer.observe(backgrounds.item(i) as Element);
+  }
+}
+
+function observeDescriptionText() {
   const introText1_before = document.getElementById('introText1_before');
   const introText1_after = document.getElementById('introText1_after');
   const introText2_before = document.getElementById('introText2_before');
@@ -22,7 +80,8 @@ export function initIntroObserver() {
     return;
   }
 
-  let changeText = (
+  // callback for observer
+  const changeText = (
     entries: IntersectionObserverEntry[],
     _observer: IntersectionObserver
   ) => {
@@ -51,6 +110,9 @@ export function initIntroObserver() {
       }
     });
   };
-  let observer = new IntersectionObserver(changeText, { threshold: [0.5, 1] });
+
+  const observer = new IntersectionObserver(changeText, {
+    threshold: 0.5,
+  });
   observer.observe(scrollThrs);
 }
