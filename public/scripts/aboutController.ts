@@ -14,7 +14,7 @@ export function initAboutObserver() {
         else img.style.transform = 'translate(100%, 0)';
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.6 }
   );
   observer.observe(aboutComponent);
 }

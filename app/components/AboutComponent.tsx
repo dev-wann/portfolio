@@ -271,6 +271,7 @@ export default function AboutComponent() {
           </div> */}
         </div>
       </div>
+      <div className={styles.bottomPlaceHolder}></div>
     </div>
   );
 }

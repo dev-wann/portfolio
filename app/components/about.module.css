@@ -1,12 +1,10 @@
 .aboutWrapper {
     width: 100vw;
-    height: 130vh;
 }
 
 .stickyWrapper {
     position: sticky;
     top: 0px;
-    height: 100vh;
 }
 
 .header {
@@ -208,5 +206,9 @@
 }
 
 .logo:hover > img + p {
-  opacity: 1;
+    opacity: 1;
+}
+
+.bottomPlaceHolder {
+    height: 30vh;
 }

@@ -13,10 +13,11 @@ export default function Welcome() {
   let timeoutID: number;
 
   useEffect(() => {
-    document.body.classList.add('disableScroll');
+    document.body.classList.add('disableXScroll');
+    document.body.classList.add('disableYScroll');
     drawWelcomeCanvas();
     return () => {
-      document.body.classList.remove('disableScroll');
+      document.body.classList.remove('disableYScroll');
       stopWelcomeCanvas();
     };
   });

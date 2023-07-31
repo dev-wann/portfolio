@@ -29,6 +29,10 @@ body {
   user-select: none; /* Standard syntax */
 }
 
-.disableScroll{
-  overflow: hidden;
+.disableXScroll {
+  overflow-x: hidden;
+}
+
+.disableYScroll {
+  overflow-y: hidden;
 }
