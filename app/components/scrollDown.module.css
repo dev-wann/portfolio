@@ -1,7 +1,7 @@
 .scroll {
   position: fixed;
   left: 50%;
-  bottom: 40px;
+  bottom: 50px;
   transform: translateX(-50%);
   transition: all 500ms;
   opacity: 0;

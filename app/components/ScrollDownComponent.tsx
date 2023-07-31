@@ -1,13 +1,16 @@
 'use client';
 
+import { useEffect } from 'react';
 import styles from './scrollDown.module.css';
 
 export default function ScrollDownComponent() {
-  setTimeout(() => {
-    const scrollDown = document.getElementById('scrollDown');
-    if (!scrollDown) return;
-    scrollDown.style.opacity = '1';
-  }, 500);
+  useEffect(() => {
+    setTimeout(() => {
+      const scrollDown = document.getElementById('scrollDown');
+      if (!scrollDown) return;
+      scrollDown.style.opacity = '1';
+    }, 500);
+  });
 
   return (
     <div className={styles.scroll} id="scrollDown">
