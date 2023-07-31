@@ -1,0 +1,212 @@
+.aboutWrapper {
+    width: 100vw;
+    height: 130vh;
+}
+
+.stickyWrapper {
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: stretch;
+    width: 100vw;
+    height: 35vh;
+}
+
+.headerContentWrapper {
+    flex: 2;
+    display: flex;
+}
+
+.headerContent {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 30px 10px 15vw;
+}
+
+.headerContent > *:nth-child(n) {
+    margin-bottom: 0;
+}
+
+.headerContent > div {
+    flex-grow: 1;
+}
+
+.headerContent > button {
+    bottom: 0px;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid white;
+    background-color: black;
+    border-radius: 10px;
+    font-size: large;
+    color: white;
+    transition: 0.3s;
+}
+
+.headerContent > button:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.headerImg {
+    flex: 3;
+    position: relative;
+}
+
+.headerImg > img {
+    transition: all 750ms;
+}
+
+.headerImg > img:nth-child(n) {
+    transform: translate(100%, 0);
+}
+
+.contents {
+    display: grid;
+    grid-template-areas:
+        "career  skill"
+        "career  edu";
+    grid-template-columns: 2fr 3fr;
+    row-gap: 20px;
+    column-gap: 10vw;
+    padding: 50px 15vw;
+}
+
+.contents > * > h1 {
+    text-decoration: underline;
+    text-underline-position: under;
+    margin-top: 0px;
+}
+
+.career {
+    grid-area: career;
+}
+
+.careerContent {
+    display:grid;
+    grid-template-areas:
+        "company  info"
+        "desc     desc"
+        "stack    stack";
+    justify-content: space-between;
+    /* row-gap: 5px; */
+    column-gap: 10px;
+    padding-left: 20px;
+}
+
+.company {
+    grid-area: company;
+    margin: auto 0 auto 0;
+}
+
+.info {
+    grid-area: info;
+    font-size: 14px;
+    text-align: right;
+    margin: 0;
+}
+
+.desc {
+    grid-area: desc;
+}
+
+.desc > h3 {
+    margin: 0 0 5px;
+}
+
+.desc > ul {
+    margin: 5px 0;
+}
+
+.stack {
+    grid-area: stack;
+}
+
+.stack > h3 {
+    margin: 0 0 5px;
+}
+.stack > ul {
+    margin: 5px 0;
+}
+
+.skills {
+    grid-area: skill;
+}
+
+.skillsContent {
+    padding-left: 20px;
+}
+
+.skillsContent > h3 {
+    margin: 10px 0;
+}
+
+.skillsLogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.edu {
+    grid-area: edu;
+}
+
+.edu > p {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.logo {
+    position: relative;
+}
+
+.logo > img {
+    transform: scale(0.9);
+    transition: all 300ms;
+}
+
+.logo > p {
+    position: absolute;
+    width: 100px;
+    padding: 2px 0;
+    margin: 10px 0;
+    left: -15px;
+    border-radius: 8px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: all 300ms;
+    z-index: 1;
+}
+
+.logo > p:after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border: solid transparent;
+    border-bottom-color: white;
+    border-width: 10px;
+    pointer-events: none;
+    content: " ";
+}
+
+.logo:hover > img {
+    transform: scale(1);
+}
+
+.logo:hover > img + p {
+  opacity: 1;
+}

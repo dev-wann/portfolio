@@ -32,7 +32,3 @@ body {
 .disableScroll{
   overflow: hidden;
 }
-
-p {
-  transition: all 1s;
-}

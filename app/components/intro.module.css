@@ -55,6 +55,7 @@
 
 .description > p {
     position: absolute;
+    transition: all 1s;
 }
 .description > p:nth-child(2) {
     opacity: 0;
