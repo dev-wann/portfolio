@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import styles from './about.module.css';
-import Image from 'next/image';
-import { initAboutObserver } from '@/public/scripts/aboutController';
+import { useEffect, useState } from "react";
+import styles from "./about.module.css";
+import Image from "next/image";
+import { initAboutObserver } from "@/public/scripts/aboutController";
 
 export default function AboutComponent() {
-  let [imgType, setImgType] = useState('defaultImg');
+  let [imgType, setImgType] = useState("defaultImg");
   useEffect(initAboutObserver);
 
   const defaultImg = (
@@ -14,7 +14,7 @@ export default function AboutComponent() {
       src="/img/about.jpg "
       alt="Picture of myself"
       fill={true}
-      style={{ objectFit: 'cover' }}
+      style={{ objectFit: "cover" }}
       id="defaultImg"
     ></Image>
   );
@@ -24,7 +24,7 @@ export default function AboutComponent() {
       src="/img/career.jpg "
       alt="Picture of myself"
       fill={true}
-      style={{ objectFit: 'cover' }}
+      style={{ objectFit: "cover" }}
       id="careerImg"
     ></Image>
   );
@@ -34,7 +34,7 @@ export default function AboutComponent() {
       src="/img/education.jpg "
       alt="Picture of myself"
       fill={true}
-      style={{ objectFit: 'cover' }}
+      style={{ objectFit: "cover" }}
       id="eduImg"
     ></Image>
   );
@@ -44,8 +44,9 @@ export default function AboutComponent() {
       <Image
         src="/img/typescript.png"
         alt="TypeScript logo"
-        width={70}
-        height={70}
+        width={50}
+        height={50}
+        style={{ objectFit: "scale-down" }}
       ></Image>
       <p>TypeScript</p>
     </div>
@@ -56,8 +57,8 @@ export default function AboutComponent() {
       <Image
         src="/img/react.svg"
         alt="React logo"
-        width={70}
-        height={70}
+        width={50}
+        height={50}
       ></Image>
       <p>React</p>
     </div>
@@ -65,21 +66,21 @@ export default function AboutComponent() {
 
   const mobx = (
     <div className={styles.logo}>
-      <Image src="/img/mobx.png" alt="MobX logo" width={70} height={70}></Image>
+      <Image src="/img/mobx.png" alt="MobX logo" width={50} height={50}></Image>
       <p>MobX</p>
     </div>
   );
 
   const html = (
     <div className={styles.logo}>
-      <Image src="/img/html.svg" alt="HTML logo" width={70} height={70}></Image>
+      <Image src="/img/html.svg" alt="HTML logo" width={50} height={50}></Image>
       <p>HTML</p>
     </div>
   );
 
   const css = (
     <div className={styles.logo}>
-      <Image src="/img/css.svg" alt="CSS logo" width={70} height={70}></Image>
+      <Image src="/img/css.svg" alt="CSS logo" width={50} height={50}></Image>
       <p>CSS</p>
     </div>
   );
@@ -89,8 +90,8 @@ export default function AboutComponent() {
       <Image
         src="/img/javascript.png"
         alt="JavaScript logo"
-        width={70}
-        height={70}
+        width={50}
+        height={50}
       ></Image>
       <p>JavaScript</p>
     </div>
@@ -101,8 +102,8 @@ export default function AboutComponent() {
       <Image
         src="/img/electron.svg"
         alt="Electron logo"
-        width={70}
-        height={70}
+        width={50}
+        height={50}
       ></Image>
       <p>Electron</p>
     </div>
@@ -110,7 +111,7 @@ export default function AboutComponent() {
 
   const jest = (
     <div className={styles.logo}>
-      <Image src="/img/jest.png" alt="Jest logo" width={70} height={70}></Image>
+      <Image src="/img/jest.png" alt="Jest logo" width={50} height={50}></Image>
       <p>Jest</p>
     </div>
   );
@@ -120,8 +121,8 @@ export default function AboutComponent() {
       <Image
         src="/img/gitlab.svg"
         alt="GitLab logo"
-        width={70}
-        height={70}
+        width={50}
+        height={50}
       ></Image>
       <p>GitLab</p>
     </div>
@@ -132,8 +133,8 @@ export default function AboutComponent() {
       <Image
         src="/img/github.svg"
         alt="GitHub logo"
-        width={70}
-        height={70}
+        width={50}
+        height={50}
       ></Image>
       <p>GitHub</p>
     </div>
@@ -141,7 +142,7 @@ export default function AboutComponent() {
 
   const cpp = (
     <div className={styles.logo}>
-      <Image src="/img/cpp.svg" alt="C++ logo" width={70} height={70}></Image>
+      <Image src="/img/cpp.svg" alt="C++ logo" width={50} height={50}></Image>
       <p>C++</p>
     </div>
   );
@@ -151,8 +152,8 @@ export default function AboutComponent() {
     const currentImg = document.getElementById(imgType);
     const changeImg = document.getElementById(type);
     if (!currentImg || !changeImg) return;
-    currentImg.style.transform = 'translate(100%, 0)';
-    changeImg.style.transform = 'translate(0, 0)';
+    currentImg.style.transform = "translate(100%, 0)";
+    changeImg.style.transform = "translate(0, 0)";
     setImgType(type);
   }
 
@@ -183,10 +184,10 @@ export default function AboutComponent() {
           <div
             className={styles.career}
             onMouseEnter={() => {
-              changeImg('careerImg');
+              changeImg("careerImg");
             }}
             onMouseLeave={() => {
-              changeImg('defaultImg');
+              changeImg("defaultImg");
             }}
           >
             <h1>Career</h1>
@@ -212,7 +213,7 @@ export default function AboutComponent() {
                 </ul>
               </div>
             </div>
-            <div className={styles.careerContent} style={{ marginTop: '20px' }}>
+            <div className={styles.careerContent} style={{ marginTop: "20px" }}>
               <h2 className={styles.company}>TmaxOS</h2>
               <p className={styles.info}>
                 연구원 / PK본부
@@ -251,10 +252,10 @@ export default function AboutComponent() {
           <div
             className={styles.edu}
             onMouseEnter={() => {
-              changeImg('eduImg');
+              changeImg("eduImg");
             }}
             onMouseLeave={() => {
-              changeImg('defaultImg');
+              changeImg("defaultImg");
             }}
           >
             <h1>Education</h1>
