@@ -1,7 +1,7 @@
 .scroll {
   position: fixed;
   left: 50%;
-  bottom: 50px;
+  bottom: 40px;
   transform: translateX(-50%);
   transition: all 500ms;
   opacity: 0;
@@ -50,4 +50,16 @@
         top: 50px;
         opacity: 0;
     }
+}
+
+.thankyou {
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+  transform: translate(-50%);
+  opacity: 0;
+  text-align: center;
+  font-size: max(20px, 1vh);
+  font-weight: bold;
+  transition: all 1s;
 }

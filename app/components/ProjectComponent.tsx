@@ -86,60 +86,63 @@ export default function ProjectComponent() {
   }
 
   return (
-    <div className={styles.projectWrapper}>
-      <div className={styles.stickyWrapper}>
-        <div className={styles.title}>
-          <h2>What I have done</h2>
-        </div>
-        <div
-          className={styles.projects}
-          onMouseDown={handleMouseDown}
-          onDoubleClick={handleDoubleClick}
-          onContextMenu={(e) => e.preventDefault()}
-        >
-          <div className={styles.folder} onTransitionEnd={handleAnimationEnd}>
-            <div className={styles.pages} id="pages">
-              <div className={styles.frontCover}>
-                <div>
-                  <h1>PROJECTS</h1>
-                  <h2>Seungwan Cho</h2>
+    <>
+      <div className={styles.projectWrapper}>
+        <div className={styles.stickyWrapper}>
+          <div className={styles.title}>
+            <h2>What I have done</h2>
+          </div>
+          <div
+            className={styles.projects}
+            onMouseDown={handleMouseDown}
+            onDoubleClick={handleDoubleClick}
+            onContextMenu={(e) => e.preventDefault()}
+          >
+            <div className={styles.folder} onTransitionEnd={handleAnimationEnd}>
+              <div className={styles.pages} id="pages">
+                <div className={styles.frontCover}>
+                  <div>
+                    <h1>PROJECTS</h1>
+                    <h2>Seungwan Cho</h2>
+                  </div>
+                  <div></div>
                 </div>
-                <div></div>
-              </div>
-              <div className={styles.page}>
-                <div></div> {/* face */}
-                <div></div> {/* back */}
-                <div>
-                  <div className={styles.index}></div>
+                <div className={styles.page}>
+                  <div></div> {/* face */}
+                  <div></div> {/* back */}
+                  <div>
+                    <div className={styles.index}></div>
+                  </div>
+                </div>
+                <div className={styles.page}>
+                  <div></div> {/* face */}
+                  <div></div> {/* back */}
+                  <div>
+                    <div className={styles.index}></div>
+                  </div>
+                </div>
+                <div className={styles.page}>
+                  <div></div> {/* face */}
+                  <div></div> {/* back */}
+                  <div>
+                    <div className={styles.index}></div>
+                  </div>
+                </div>
+                <div className={styles.backCover}>
+                  <div>
+                    <p>Double click to close the folder</p>
+                  </div>
                 </div>
               </div>
-              <div className={styles.page}>
-                <div></div> {/* face */}
-                <div></div> {/* back */}
-                <div>
-                  <div className={styles.index}></div>
-                </div>
-              </div>
-              <div className={styles.page}>
-                <div></div> {/* face */}
-                <div></div> {/* back */}
-                <div>
-                  <div className={styles.index}></div>
-                </div>
-              </div>
-              <div className={styles.backCover}>
-                <div>
-                  <p>Double click to close the folder</p>
-                </div>
-              </div>
+              <div className={styles.spineFront}>{folderSpineFront}</div>
+              <div className={styles.spineSide}>{folderSpineSide}</div>
+              <div className={styles.spineTop}></div>
             </div>
-            <div className={styles.spineFront}>{folderSpineFront}</div>
-            <div className={styles.spineSide}>{folderSpineSide}</div>
-            <div className={styles.spineTop}></div>
           </div>
         </div>
+        <div className={styles.bottomPlaceHolder}></div>
       </div>
       <div className={styles.bottomPlaceHolder}></div>
-    </div>
+    </>
   );
 }
