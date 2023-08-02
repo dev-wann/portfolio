@@ -1,0 +1,220 @@
+.projectWrapper {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 10px 15vw;
+}
+
+.stickyWrapper {
+  position: sticky;
+  top: 0px;
+}
+
+.title {
+  padding: 15px 0;
+}
+
+.desc > p {
+  margin-top: 0;
+}
+
+.projects {
+  position: relative;
+  width: calc(100% - 20px);
+  height: calc(90vh - 20px);
+  top: 20px;
+}
+
+.folder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0px;
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+}
+
+.pages > div {
+  position: absolute;
+  width: 100%;
+  perspective: 3200px;
+  perspective-origin: 100% 100%;
+}
+
+.pages > div > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  transform-origin: center bottom;
+  transition: all 600ms;
+}
+
+.pages > div > div:nth-child(1) {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.pages > div > div:nth-child(2) {
+  filter: brightness(75%);
+}
+
+.frontCover {
+  bottom: 40px;
+  height: calc(100% - 40px);
+}
+
+.frontCover > div {
+  background-color: rgb(115, 30, 194);
+}
+
+.frontCover > div:before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  background-image: url('/img/project/paperTexture.jpg');
+  opacity: 0.2;
+  content: '';
+}
+
+.frontCover > div:nth-child(1) > h1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  background-color: white;
+  padding: 1vh 2vw;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 6vh;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.frontCover > div:nth-child(1) > h2 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  background-color: white;
+  padding: 1vh 1vw;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 3vh;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.backCover {
+  bottom: 60px;
+  left: 20px;
+  height: calc(100% - 40px);
+}
+
+.backCover > div {
+  background-color: rgb(115, 30, 194);
+  border-radius: 10px 10px 0 0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backCover > div:before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  background-image: url('/img/project/paperTexture.jpg');
+  opacity: 0.2;
+  content: '';
+}
+
+.backCover > div > p {
+  background-color: white;
+  padding: 1vh 2vw;
+  border-radius: 10px;
+  font-size: 3vw;
+  font-weight: bold;
+  color:black;
+}
+
+.page {
+  height: calc(96% - 40px);
+}
+
+.page > div {
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.page > div:before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  background-image: url('/img/project/paperTexture.jpg');
+  opacity: 0.2;
+  content: '';
+}
+
+.index {
+  position: absolute;
+  width: 20vw;
+  height: 3.5vh;
+  top: -3.5vh;
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.index:before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  background-image: url('/img/project/paperTexture.jpg');
+  opacity: 0.2;
+  content: '';
+}
+
+.spineFront {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 40px;
+}
+
+.spineSide {
+  position: absolute;
+  width: 20px;
+  height: 37px;
+  left: 100%;
+  bottom: 13px;
+  transform: skew(0, 135deg);
+}
+
+.spineTop {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 10px;
+  bottom: 40px;
+  background-color: blueviolet;
+  filter: brightness(30%);
+  transform: skew(135deg, 0);
+  z-index: -1;
+}
+
+.bottomPlaceHolder {
+  height: 30vh;
+}
