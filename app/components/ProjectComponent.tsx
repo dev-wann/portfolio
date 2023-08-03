@@ -17,20 +17,19 @@ export default function ProjectComponent() {
   useEffect(() => {
     organizeFolder();
     const contactComponent = document.getElementById('conatactWrapper');
+    const observer = new IntersectionObserver(
+      (entries, _observer) => {
+        if (!entries.at(0)?.isIntersecting) return;
+        if (page.current > 0) {
+          page.current = 0;
+          initFlip();
+          isAnimating.current = true;
+        }
+      },
+      { threshold: 0.2 }
+    );
     if (contactComponent) observer.observe(contactComponent);
   });
-
-  const observer = new IntersectionObserver(
-    (entries, _observer) => {
-      if (!entries.at(0)?.isIntersecting) return;
-      if (page.current > 0) {
-        page.current = 0;
-        initFlip();
-        isAnimating.current = true;
-      }
-    },
-    { threshold: 0.2 }
-  );
 
   const folderSpineFront = (
     <Image

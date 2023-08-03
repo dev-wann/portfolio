@@ -5,32 +5,30 @@ import styles from './scrollDown.module.css';
 
 export default function ScrollDownComponent() {
   useEffect(() => {
+    const scrollDown = document.getElementById('scrollDown');
+    const footer = document.getElementById('footer');
+    const observer = new IntersectionObserver(
+      (entries, _observer) => {
+        let thankyou = document.getElementById('thankyou');
+        if (!scrollDown || !thankyou) return;
+
+        if (entries.at(0)?.isIntersecting) {
+          scrollDown.style.opacity = '0';
+          thankyou.style.opacity = '1';
+        } else {
+          scrollDown.style.opacity = '1';
+          thankyou.style.opacity = '0';
+        }
+      },
+      { threshold: 0.2 }
+    );
+
     setTimeout(() => {
-      const scrollDown = document.getElementById('scrollDown');
       if (!scrollDown) return;
       scrollDown.style.opacity = '1';
-    }, 500);
-
-    const footer = document.getElementById('footer');
-    if (footer) observer.observe(footer);
+      if (footer) observer.observe(footer);
+    }, 1000);
   });
-
-  const observer = new IntersectionObserver(
-    (entries, _observer) => {
-      let scrollDown = document.getElementById('scrollDown');
-      let thankyou = document.getElementById('thankyou');
-      if (!scrollDown || !thankyou) return;
-
-      if (entries.at(0)?.isIntersecting) {
-        scrollDown.style.opacity = '0';
-        thankyou.style.opacity = '1';
-      } else {
-        scrollDown.style.opacity = '1';
-        thankyou.style.opacity = '0';
-      }
-    },
-    { threshold: 0.2 }
-  );
 
   return (
     <>

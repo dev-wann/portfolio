@@ -30,26 +30,24 @@
   animation: scrolldown 1300ms 650ms linear infinite;
   animation-fill-mode: backwards;
 }
-  
+
 .scroll > div:nth-child(2) {
   animation: scrolldown 1300ms linear infinite;
 }
 
 @keyframes scrolldown {
-    0% {
-        top: 18px;
-        opacity: 0;
-    }
-
-    50% {
-        top: 35px;
-        opacity: 0.3;
-    }
-
-    100% {
-        top: 50px;
-        opacity: 0;
-    }
+  0% {
+    top: 18px;
+    opacity: 0;
+  }
+  50% {
+    top: 35px;
+    opacity: 0.3;
+  }
+  100% {
+    top: 50px;
+    opacity: 0;
+  }
 }
 
 .thankyou {

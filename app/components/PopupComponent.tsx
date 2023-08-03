@@ -3,7 +3,8 @@ import styles from './popup.module.css';
 import { closePopup } from '@/public/scripts/popupController';
 
 export default function PopupComponent() {
-  document.addEventListener('click', closePopup);
+  if (typeof window !== 'undefined')
+    document.addEventListener('click', closePopup);
 
   const closeButton = (
     <Image src="/img/popup/close.svg" alt="close" fill={true}></Image>
