@@ -69,8 +69,8 @@
 .contents {
   display: grid;
   grid-template-areas:
-    "career  skills"
-    "career  edu";
+    'career  skills'
+    'career  edu';
   row-gap: 20px;
   column-gap: 5vw;
   padding: 30px 15vw;
@@ -89,9 +89,9 @@
 .careerContent {
   display: grid;
   grid-template-areas:
-    "company  info"
-    "desc     desc"
-    "stack    stack";
+    'company  info'
+    'desc     desc'
+    'stack    stack';
   justify-content: space-between;
   /* row-gap: 5px; */
   column-gap: 10px;
@@ -149,7 +149,7 @@
 
 .skillsLogo {
   display: grid;
-  grid-template-columns: repeat(8, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fit, 50px);
   row-gap: 10px;
   column-gap: 10px;
 }
@@ -200,7 +200,7 @@
   border-bottom-color: white;
   border-width: 10px;
   pointer-events: none;
-  content: " ";
+  content: ' ';
 }
 
 .logo:hover > img {
