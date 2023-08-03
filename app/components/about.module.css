@@ -69,7 +69,7 @@
 .contents {
   display: grid;
   grid-template-areas:
-    "career  skill"
+    "career  skills"
     "career  edu";
   row-gap: 20px;
   column-gap: 5vw;
@@ -136,7 +136,7 @@
 }
 
 .skills {
-  grid-area: skill;
+  grid-area: skills;
 }
 
 .skillsContent {
@@ -156,10 +156,11 @@
 
 .edu {
   grid-area: edu;
+  margin-top: auto;
 }
 
 .edu > p {
-  margin: 0;
+  margin: 5px 0;
   padding-left: 20px;
 }
 

@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import styles from "./about.module.css";
-import Image from "next/image";
-import { initAboutObserver } from "@/public/scripts/aboutController";
+import { useEffect, useRef } from 'react';
+import styles from './about.module.css';
+import Image from 'next/image';
+import { initAboutObserver } from '@/public/scripts/aboutController';
+import PopupComponent from './PopupComponent';
+import { showPopup } from '@/public/scripts/popupController';
 
 export default function AboutComponent() {
-  let [imgType, setImgType] = useState("defaultImg");
+  const imgType = useRef('defaultImg');
   useEffect(initAboutObserver);
 
   const defaultImg = (
@@ -14,7 +16,7 @@ export default function AboutComponent() {
       src="/img/about.jpg "
       alt="Picture of myself"
       fill={true}
-      style={{ objectFit: "cover" }}
+      style={{ objectFit: 'cover' }}
       id="defaultImg"
     ></Image>
   );
@@ -24,7 +26,7 @@ export default function AboutComponent() {
       src="/img/career.jpg "
       alt="Picture of myself"
       fill={true}
-      style={{ objectFit: "cover" }}
+      style={{ objectFit: 'cover' }}
       id="careerImg"
     ></Image>
   );
@@ -34,7 +36,7 @@ export default function AboutComponent() {
       src="/img/education.jpg "
       alt="Picture of myself"
       fill={true}
-      style={{ objectFit: "cover" }}
+      style={{ objectFit: 'cover' }}
       id="eduImg"
     ></Image>
   );
@@ -46,7 +48,7 @@ export default function AboutComponent() {
         alt="TypeScript logo"
         width={50}
         height={50}
-        style={{ objectFit: "scale-down" }}
+        style={{ objectFit: 'scale-down' }}
       ></Image>
       <p>TypeScript</p>
     </div>
@@ -148,13 +150,13 @@ export default function AboutComponent() {
   );
 
   function changeImg(type: string) {
-    if (imgType === type) return;
-    const currentImg = document.getElementById(imgType);
+    if (imgType.current === type) return;
+    const currentImg = document.getElementById(imgType.current);
     const changeImg = document.getElementById(type);
     if (!currentImg || !changeImg) return;
-    currentImg.style.transform = "translate(100%, 0)";
-    changeImg.style.transform = "translate(0, 0)";
-    setImgType(type);
+    currentImg.style.transform = 'translate(100%, 0)';
+    changeImg.style.transform = 'translate(0, 0)';
+    imgType.current = type;
   }
 
   return (
@@ -171,7 +173,7 @@ export default function AboutComponent() {
                 perferendis rerum sequi provident illum quibusdam blanditiis
               </p>
               <div></div>
-              <button>TMI about me</button>
+              <button onClick={showPopup}>TMI about me</button>
             </div>
           </div>
           <div className={styles.headerImg}>
@@ -184,10 +186,10 @@ export default function AboutComponent() {
           <div
             className={styles.career}
             onMouseEnter={() => {
-              changeImg("careerImg");
+              changeImg('careerImg');
             }}
             onMouseLeave={() => {
-              changeImg("defaultImg");
+              changeImg('defaultImg');
             }}
           >
             <h1>Career</h1>
@@ -213,7 +215,7 @@ export default function AboutComponent() {
                 </ul>
               </div>
             </div>
-            <div className={styles.careerContent} style={{ marginTop: "20px" }}>
+            <div className={styles.careerContent} style={{ marginTop: '20px' }}>
               <h2 className={styles.company}>TmaxOS</h2>
               <p className={styles.info}>
                 연구원 / PK본부
@@ -252,25 +254,18 @@ export default function AboutComponent() {
           <div
             className={styles.edu}
             onMouseEnter={() => {
-              changeImg("eduImg");
+              changeImg('eduImg');
             }}
             onMouseLeave={() => {
-              changeImg("defaultImg");
+              changeImg('defaultImg');
             }}
           >
             <h1>Education</h1>
             <p>연세대학교 전기전자공학부 석사 (2017.03 ~ 2019.08)</p>
             <p>연세대학교 전기전자공학부 학사 (2013.03 ~ 2017.02)</p>
           </div>
-          {/* <div>
-            <h2>What do you mean by &apos;searching new things&apos;</h2>
-            <h3>(aka TMI about me)</h3>
-            <p>학부</p>
-            <p>대학원</p>
-            <p>음악</p>
-            <p>개발</p>
-          </div> */}
         </div>
+        <PopupComponent />
       </div>
       <div className={styles.bottomPlaceHolder}></div>
     </div>
