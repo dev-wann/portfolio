@@ -13,7 +13,7 @@ export default function AboutComponent() {
 
   const defaultImg = (
     <Image
-      src="/img/about.jpg "
+      src="/img/about/default.jpg "
       alt="Picture of myself"
       fill={true}
       style={{ objectFit: 'cover' }}
@@ -23,7 +23,7 @@ export default function AboutComponent() {
 
   const careerImg = (
     <Image
-      src="/img/career.jpg "
+      src="/img/about/career.jpg "
       alt="Picture of myself"
       fill={true}
       style={{ objectFit: 'cover' }}
@@ -33,7 +33,7 @@ export default function AboutComponent() {
 
   const eduImg = (
     <Image
-      src="/img/education.jpg "
+      src="/img/about/education.jpg "
       alt="Picture of myself"
       fill={true}
       style={{ objectFit: 'cover' }}
@@ -44,7 +44,7 @@ export default function AboutComponent() {
   const typescript = (
     <div className={styles.logo}>
       <Image
-        src="/img/typescript.png"
+        src="/img/about/typescript.png"
         alt="TypeScript logo"
         width={50}
         height={50}
@@ -57,7 +57,7 @@ export default function AboutComponent() {
   const react = (
     <div className={styles.logo}>
       <Image
-        src="/img/react.svg"
+        src="/img/about/react.svg"
         alt="React logo"
         width={50}
         height={50}
@@ -68,21 +68,36 @@ export default function AboutComponent() {
 
   const mobx = (
     <div className={styles.logo}>
-      <Image src="/img/mobx.png" alt="MobX logo" width={50} height={50}></Image>
+      <Image
+        src="/img/about/mobx.png"
+        alt="MobX logo"
+        width={50}
+        height={50}
+      ></Image>
       <p>MobX</p>
     </div>
   );
 
   const html = (
     <div className={styles.logo}>
-      <Image src="/img/html.svg" alt="HTML logo" width={50} height={50}></Image>
+      <Image
+        src="/img/about/html.svg"
+        alt="HTML logo"
+        width={50}
+        height={50}
+      ></Image>
       <p>HTML</p>
     </div>
   );
 
   const css = (
     <div className={styles.logo}>
-      <Image src="/img/css.svg" alt="CSS logo" width={50} height={50}></Image>
+      <Image
+        src="/img/about/css.svg"
+        alt="CSS logo"
+        width={50}
+        height={50}
+      ></Image>
       <p>CSS</p>
     </div>
   );
@@ -90,7 +105,7 @@ export default function AboutComponent() {
   const javascript = (
     <div className={styles.logo}>
       <Image
-        src="/img/javascript.png"
+        src="/img/about/javascript.png"
         alt="JavaScript logo"
         width={50}
         height={50}
@@ -102,7 +117,7 @@ export default function AboutComponent() {
   const electron = (
     <div className={styles.logo}>
       <Image
-        src="/img/electron.svg"
+        src="/img/about/electron.svg"
         alt="Electron logo"
         width={50}
         height={50}
@@ -113,7 +128,12 @@ export default function AboutComponent() {
 
   const jest = (
     <div className={styles.logo}>
-      <Image src="/img/jest.png" alt="Jest logo" width={50} height={50}></Image>
+      <Image
+        src="/img/about/jest.png"
+        alt="Jest logo"
+        width={50}
+        height={50}
+      ></Image>
       <p>Jest</p>
     </div>
   );
@@ -121,7 +141,7 @@ export default function AboutComponent() {
   const gitlab = (
     <div className={styles.logo}>
       <Image
-        src="/img/gitlab.svg"
+        src="/img/about/gitlab.svg"
         alt="GitLab logo"
         width={50}
         height={50}
@@ -144,7 +164,12 @@ export default function AboutComponent() {
 
   const cpp = (
     <div className={styles.logo}>
-      <Image src="/img/cpp.svg" alt="C++ logo" width={50} height={50}></Image>
+      <Image
+        src="/img/about/cpp.svg"
+        alt="C++ logo"
+        width={50}
+        height={50}
+      ></Image>
       <p>C++</p>
     </div>
   );

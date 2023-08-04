@@ -11,7 +11,7 @@ export default function IntroComponent() {
   });
   const img1 = (
     <Image
-      src="/img/intro_1.jpg"
+      src="/img/intro/intro_1.jpg"
       alt="Picture representing 'dive into unknown'"
       fill={true}
       style={{ objectFit: 'cover' }}
@@ -19,7 +19,7 @@ export default function IntroComponent() {
   );
   const img2 = (
     <Image
-      src="/img/intro_2.jpg"
+      src="/img/intro/intro_2.jpg"
       alt="Picture of comet's tail"
       fill={true}
       style={{ objectFit: 'cover' }}
@@ -27,7 +27,7 @@ export default function IntroComponent() {
   );
   const img3 = (
     <Image
-      src="/img/intro_3.jpg"
+      src="/img/intro/intro_3.jpg"
       alt="Picture of a person pointing at comet"
       fill={true}
       style={{ objectFit: 'cover' }}
