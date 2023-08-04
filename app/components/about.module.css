@@ -73,7 +73,7 @@
     'career  edu';
   row-gap: 20px;
   column-gap: 5vw;
-  padding: 30px 15vw;
+  padding: 5vh 15vw;
 }
 
 .contents > * > h1 {

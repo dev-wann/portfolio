@@ -31,28 +31,124 @@ export default function ProjectComponent() {
     if (contactComponent) observer.observe(contactComponent);
   });
 
+  const leftClick = (
+    <div className={styles.instItem}>
+      <div className={styles.instImg}>
+        <Image
+          src="/img/project/left_click.png"
+          alt="left click to turn the page"
+          fill={true}
+          style={{ objectFit: 'contain' }}
+        ></Image>
+      </div>
+      <div className={styles.instText}>
+        <p>Left click</p>
+        <p>to turn</p>
+        <p> the page</p>
+        <p>Forward</p>
+      </div>
+    </div>
+  );
+
+  const rightClick = (
+    <div className={styles.instItem}>
+      <div className={styles.instImg}>
+        <Image
+          src="/img/project/right_click.png"
+          alt="right click to turn back the page"
+          fill={true}
+          style={{ objectFit: 'contain' }}
+        ></Image>
+      </div>
+      <div className={styles.instText}>
+        <p>Right click</p>
+        <p>to turn</p>
+        <p>the page</p>
+        <p>Backward</p>
+      </div>
+    </div>
+  );
+
   const folderSpineFront = (
-    <Image
-      src="/img/project/blank-brown-paper.jpg"
-      alt="spine of a folder"
-      fill={true}
-      style={{
-        objectFit: 'cover',
-        filter: 'grayscale(1) brightness(40%)',
-        borderRadius: '0 0 5px 5px',
-      }}
-    ></Image>
+    <div className={styles.spineFront}>
+      <Image
+        src="/img/project/blank-brown-paper.jpg"
+        alt="spine of a folder"
+        fill={true}
+        style={{
+          objectFit: 'cover',
+          filter: 'grayscale(1) brightness(40%)',
+          borderRadius: '0 0 5px 5px',
+        }}
+      ></Image>
+    </div>
   );
   const folderSpineSide = (
-    <Image
-      src="/img/project/blank-brown-paper.jpg"
-      alt="spine of a folder"
-      fill={true}
-      style={{
-        objectFit: 'cover',
-        filter: 'grayscale(1) brightness(30%)',
-      }}
-    ></Image>
+    <div className={styles.spineSide}>
+      <Image
+        src="/img/project/blank-brown-paper.jpg"
+        alt="spine of a folder"
+        fill={true}
+        style={{
+          objectFit: 'cover',
+          filter: 'grayscale(1) brightness(30%)',
+        }}
+      ></Image>
+    </div>
+  );
+
+  const superoffice = (
+    <div className={styles.item}>
+      <h1>Project Name</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
+        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
+        modi quam.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
+        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
+        modi quam.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
+        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
+        modi quam.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
+        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
+        modi quam.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
+        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
+        modi quam.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
+        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
+        modi quam.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
+        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
+        modi quam.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
+        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
+        modi quam.
+      </p>
+    </div>
   );
 
   function handleMouseDown(e: React.MouseEvent) {
@@ -86,19 +182,21 @@ export default function ProjectComponent() {
 
   return (
     <>
-      <div className={styles.projectWrapper}>
+      <div
+        className={styles.projectWrapper}
+        onMouseDown={handleMouseDown}
+        onDoubleClick={handleDoubleClick}
+        onContextMenu={(e) => e.preventDefault()}
+        onTransitionEnd={handleAnimationEnd}
+      >
         <div className={styles.stickyWrapper}>
           <div className={styles.title}>
             <h2>What I have done</h2>
           </div>
-          <div
-            className={styles.projects}
-            onMouseDown={handleMouseDown}
-            onDoubleClick={handleDoubleClick}
-            onContextMenu={(e) => e.preventDefault()}
-          >
-            <div className={styles.folder} onTransitionEnd={handleAnimationEnd}>
-              <div className={styles.pages} id="pages">
+          <div className={styles.contents}>
+            <div className={styles.instruction}>{leftClick}</div>
+            <div className={styles.folderWrapper}>
+              <div className={styles.folder} id="folder">
                 <div className={styles.frontCover}>
                   <div>
                     <h1>PROJECTS</h1>
@@ -107,22 +205,34 @@ export default function ProjectComponent() {
                   <div></div>
                 </div>
                 <div className={styles.page}>
-                  <div></div> {/* face */}
-                  <div></div> {/* back */}
+                  <div>
+                    <div className={styles.index}>
+                      <p>Project #1</p>
+                    </div>
+                    {superoffice}
+                  </div>
                   <div>
                     <div className={styles.index}></div>
                   </div>
                 </div>
                 <div className={styles.page}>
-                  <div></div> {/* face */}
-                  <div></div> {/* back */}
+                  <div>
+                    <div className={styles.index}>
+                      <p>Project #2</p>
+                    </div>
+                    {superoffice}
+                  </div>
                   <div>
                     <div className={styles.index}></div>
                   </div>
                 </div>
                 <div className={styles.page}>
-                  <div></div> {/* face */}
-                  <div></div> {/* back */}
+                  <div>
+                    <div className={styles.index}>
+                      <p>Project #3</p>
+                    </div>
+                    {superoffice}
+                  </div>
                   <div>
                     <div className={styles.index}></div>
                   </div>
@@ -133,10 +243,11 @@ export default function ProjectComponent() {
                   </div>
                 </div>
               </div>
-              <div className={styles.spineFront}>{folderSpineFront}</div>
-              <div className={styles.spineSide}>{folderSpineSide}</div>
+              {folderSpineFront}
+              {folderSpineSide}
               <div className={styles.spineTop}></div>
             </div>
+            <div className={styles.instruction}>{rightClick}</div>
           </div>
         </div>
         <div className={styles.bottomPlaceHolder}></div>
