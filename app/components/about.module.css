@@ -76,10 +76,41 @@
   padding: 5vh 15vw;
 }
 
-.contents > * > h1 {
+.contents * {
+  transition: all 400ms;
+}
+
+.contents > div {
+  position: relative;
+  padding: 0.25vw 0.5vw;
+}
+
+.contents > div:after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #f2f7fa;
+  opacity: 0;
+  z-index: -1;
+  transition: all 400ms;
+  content: '';
+}
+
+.contents > div > h1 {
   text-decoration: underline;
   text-underline-position: under;
   margin-top: 0px;
+}
+
+.contents > div:hover:after {
+  opacity: 0.2;
+}
+
+.contents > div:hover > h1 {
+  color: #80ecd9;
 }
 
 .career {
@@ -170,7 +201,6 @@
 
 .logo > img {
   transform: scale(0.9);
-  transition: all 300ms;
 }
 
 .logo > p {
@@ -178,14 +208,13 @@
   width: 100px;
   padding: 2px 0;
   margin: 10px 0;
-  left: -15px;
+  left: calc((100% - 100px) / 2);
   border-radius: 8px;
   background: white;
   color: black;
   font-weight: bold;
   text-align: center;
   opacity: 0;
-  transition: all 300ms;
   z-index: 1;
 }
 
