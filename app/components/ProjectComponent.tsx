@@ -136,18 +136,6 @@ export default function ProjectComponent() {
         Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
         modi quam.
       </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
-        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
-        modi quam.
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-        totam ipsum asperiores minus rerum cumque fugiat animi tempora eveniet.
-        Ullam eveniet eius dolorum obcaecati dolores velit consequuntur quisquam
-        modi quam.
-      </p>
     </div>
   );
 
@@ -207,7 +195,7 @@ export default function ProjectComponent() {
                 <div className={styles.page}>
                   <div>
                     <div className={styles.index}>
-                      <p>Project #1</p>
+                      <p>&nbsp;Project #1</p>
                     </div>
                     {superoffice}
                   </div>
@@ -218,7 +206,7 @@ export default function ProjectComponent() {
                 <div className={styles.page}>
                   <div>
                     <div className={styles.index}>
-                      <p>Project #2</p>
+                      <p>&nbsp;Project #2</p>
                     </div>
                     {superoffice}
                   </div>
@@ -229,7 +217,7 @@ export default function ProjectComponent() {
                 <div className={styles.page}>
                   <div>
                     <div className={styles.index}>
-                      <p>Project #3</p>
+                      <p>&nbsp;Project #3</p>
                     </div>
                     {superoffice}
                   </div>

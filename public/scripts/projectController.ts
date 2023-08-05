@@ -12,9 +12,7 @@ export function organizeFolder() {
       // index 생성
       let indexFace = page.children.item(0)?.children.item(0) as HTMLElement;
       let indexBack = page.children.item(1)?.children.item(0) as HTMLElement;
-      let left = `calc(15px + (100% - 30px - 20vw) * ${
-        (i - 1) / (pageNum - 3)
-      })`;
+      let left = `calc(1vw + (100% - 2vw - 15vw) * ${(i - 1) / (pageNum - 3)})`;
       if (indexFace && indexBack) {
         indexFace.style.left = left;
         indexBack.style.left = left;

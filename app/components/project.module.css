@@ -176,37 +176,61 @@
 }
 
 .page {
-  height: calc(96% - 40px);
+  height: 70vh;
 }
 
 .page > div {
-  background-color: white;
+  background-color: #b4dbf6;
   border-radius: 10px 10px 0 0;
 }
 
 .index {
   position: absolute;
-  width: 20vw;
-  height: 3.5vh;
-  top: calc(-3.5vh + 1px);
-  background-color: white;
+  width: 15vw;
+  height: 4vh;
+  top: calc(-4vh + 1px);
+  background-color: #b4dbf6;
   border-radius: 10px 10px 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.index > p:after {
+  position: absolute;
+  width: 2.8vh;
+  height: 2.8vh;
+  left: 100%;
+  top: 0px;
+  border-radius: 0 5px 5px 0;
+  background-color: #27a8f7;
+  content: '';
 }
 
 .index > p {
-  padding-top: 5px;
-  font-size: 2vh;
+  position: absolute;
+  width: calc(13vw - 2.8vh);
+  height: 2.6vh;
+  bottom: 0.4vh;
+  left: 1vw;
+  margin: 0;
+  padding-top: 0.2vh;
+  background-color: white;
+  border-radius: 5px 0 0 5px;
+  font-size: min(1.8vh, 1.5vw);
   font-weight: bold;
+  text-align: center;
 }
 
 .item {
-  width: 88%;
-  height: 88%;
-  margin: 6%;
-  overflow: auto;
+  width: calc(100% - 4vw);
+  height: calc(100% - 3vw);
+  margin: 1.5vw 2vw;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.item > * {
+  width: 90%;
+  margin-left: 5%;
 }
 
 .spineFront {
