@@ -1,83 +1,83 @@
 .introWrapper {
-    width: 100vw;
+  width: 100vw;
 }
 
 .stickyWrapper {
-    width: 100vw;
-    height: 50vh;
-    position: sticky;
-    top: 0px;
-    z-index: -1;
+  width: 100vw;
+  height: 50vh;
+  position: sticky;
+  top: 0px;
+  z-index: -1;
 }
 
 .topPlaceHolder {
-    height: 40vh;
+  height: 40vh;
 }
 
 .bottomPlaceHolder {
-    height: 50vh;
+  height: 50vh;
 }
 
 .title {
-    position: sticky;
-    top: 10vh;
-    left: 50vw;
-    height: 40vh;
-    text-align: center;
-    font-size:10vh;
-    transition: all 500ms;
+  position: sticky;
+  top: 10vh;
+  left: 50vw;
+  height: 40vh;
+  text-align: center;
+  font-size: 10vh;
+  transition: all 500ms;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position:relative;
-    top: 40vh;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  top: 40vh;
+  padding: 20px;
 }
 
 .subTitle {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 60px;
 }
 
 .description {
-    display:flex;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .description > p {
-    position: absolute;
-    transition: all 1s;
+  position: absolute;
+  transition: all 1s;
 }
 .description > p:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 500ms;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 500ms;
 }
 
 .item {
-    position: relative;
-    width: 33.3333%;
-    height: 100vh;
+  position: relative;
+  width: 33.3333%;
+  height: 100vh;
 }
 
 #item1 {
-    left: 33.3333%;
+  left: 33.3333%;
 }
 
 #item3 {
-    left: 66.6666%;
+  left: 66.6666%;
 }

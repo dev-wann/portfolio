@@ -185,7 +185,7 @@ export default function AboutComponent() {
   }
 
   return (
-    <div className={styles.aboutWrapper}>
+    <div className={styles.aboutWrapper} id="about">
       <div className={styles.stickyWrapper}>
         <div className={styles.header}>
           <div className={styles.headerContentWrapper}>

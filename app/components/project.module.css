@@ -6,13 +6,13 @@
 
 .stickyWrapper {
   position: sticky;
-  top: 0px;
+  top: 5vh;
 }
 
 .title {
   display: flex;
   align-items: center;
-  height: 10vh;
+  /* height: 10vh; */
 }
 
 .contents {
@@ -61,7 +61,7 @@
 .folderWrapper {
   position: relative;
   width: 55vw;
-  height: calc(80vh - 20px);
+  height: calc(80vh - 40px);
 }
 
 .folder {
@@ -176,7 +176,7 @@
 }
 
 .page {
-  height: 70vh;
+  height: 68vh;
 }
 
 .page > div {

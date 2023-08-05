@@ -176,6 +176,7 @@ export default function ProjectComponent() {
         onDoubleClick={handleDoubleClick}
         onContextMenu={(e) => e.preventDefault()}
         onTransitionEnd={handleAnimationEnd}
+        id="projects"
       >
         <div className={styles.stickyWrapper}>
           <div className={styles.title}>

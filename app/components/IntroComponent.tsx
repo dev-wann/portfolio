@@ -36,7 +36,7 @@ export default function IntroComponent() {
 
   return (
     <>
-      <div className={styles.introWrapper}>
+      <div className={styles.introWrapper} id="intro">
         <div className={styles.topPlaceHolder}></div>
         <h1 className={styles.title} id="introTitle">
           혜성

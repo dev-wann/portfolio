@@ -41,7 +41,7 @@ export default function ContactComponent() {
 
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper" id="contact">
         <div className={styles.contactWrapper} id="conatactWrapper">
           <p className={styles.title}>Contact</p>
           <div className={styles.contentWrapper}>
@@ -65,8 +65,8 @@ export default function ContactComponent() {
             </div>
           </div>
         </div>
+        {footer}
       </div>
-      {footer}
     </>
   );
 }
