@@ -1,8 +1,8 @@
-import AboutComponent from '../components/AboutComponent';
-import ContactComponent from '../components/ContactComponent';
-import IntroComponent from '../components/IntroComponent';
+import AboutComponent from '../components/about/AboutComponent';
+import ContactComponent from '../components/contact/ContactComponent';
+import IntroComponent from '../components/intro/IntroComponent';
 import Navigation from '../components/Navigation';
-import ProjectComponent from '../components/ProjectComponent';
+import ProjectComponent from '../components/project/ProjectComponent';
 import ScrollDownComponent from '../components/ScrollDownComponent';
 
 export default function Home() {

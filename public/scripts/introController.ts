@@ -1,4 +1,4 @@
-import styles from '/app/components/intro.module.css';
+import styles from '/app/components/intro/intro.module.css';
 
 export function initIntroObserver() {
   observeTitle();

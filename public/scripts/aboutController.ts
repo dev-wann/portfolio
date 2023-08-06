@@ -1,4 +1,4 @@
-import styles from 'app/components/about.module.css';
+import styles from 'app/components/about/about.module.css';
 
 export function initAboutObserver() {
   const aboutComponent = document
