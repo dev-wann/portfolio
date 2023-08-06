@@ -1,3 +1,5 @@
+let timeoutID: number;
+
 export function organizeFolder() {
   const folder = document.getElementById('folder');
   if (!folder) return;
@@ -22,7 +24,22 @@ export function organizeFolder() {
   adjustBrightness(0);
 }
 
+export function induceFlip(page: number, flipped?: boolean) {
+  if (page !== 0) return;
+  const coverFace = document.getElementById('folder')?.firstChild
+    ?.firstChild as HTMLElement;
+  const coverBack = document.getElementById('folder')?.firstChild
+    ?.lastChild as HTMLElement;
+  if (!coverFace || !coverBack) return;
+  coverFace.style.transform = flipped ? 'rotateX(0deg)' : 'rotateX(-15deg)';
+  coverBack.style.transform = flipped ? 'rotateX(0deg)' : 'rotateX(-15deg)';
+  timeoutID = window.setTimeout(() => {
+    if (!flipped) induceFlip(page, true);
+  }, 500);
+}
+
 export function flipBack(page: number) {
+  clearTimeout(timeoutID);
   const folder = document.getElementById('folder');
   if (!folder) return false;
   const pageNum = folder.children.length;

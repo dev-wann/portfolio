@@ -46,16 +46,16 @@
 }
 
 .instText > p:nth-child(1) {
-  font-size: 1vw;
+  font-size: max(1vw, 16px);
 }
 .instText > p:nth-child(2) {
-  font-size: 1vw;
+  font-size: max(1vw, 16px);
 }
 .instText > p:nth-child(3) {
-  font-size: 1vw;
+  font-size: max(1vw, 16px);
 }
 .instText > p:nth-child(4) {
-  font-size: 1vw;
+  font-size: max(1vw, 16px);
 }
 
 .folderWrapper {
@@ -123,7 +123,7 @@
   padding: 1vh 2vw;
   border-radius: 10px;
   transform: translate(-50%, -50%);
-  font-size: 6vh;
+  font-size: min(6vh, 6vw);
   font-weight: bolder;
   text-align: center;
 }
@@ -136,7 +136,7 @@
   padding: 1vh 1vw;
   border-radius: 10px;
   transform: translate(-50%, -50%);
-  font-size: 3vh;
+  font-size: min(3vh 3vw);
   font-weight: bolder;
   text-align: center;
 }
@@ -176,7 +176,7 @@
 }
 
 .page {
-  height: 68vh;
+  height: calc(100% - 38px - 4vh);
 }
 
 .page > div {
@@ -238,6 +238,8 @@
   width: calc(100% - 20px);
   bottom: 0px;
   height: 40px;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
   z-index: -997;
 }
 
@@ -247,6 +249,8 @@
   height: 37px;
   left: calc(100% - 20px);
   bottom: 13px;
+  border-radius: 0 0 5px 0;
+  overflow: hidden;
   transform: skew(0, 135deg);
   z-index: -998;
 }
@@ -257,7 +261,7 @@
   height: 20px;
   left: 10px;
   bottom: 40px;
-  background-color: blueviolet;
+  background-color: #c4cbff;
   filter: brightness(30%);
   transform: skew(135deg, 0);
   z-index: -999;
