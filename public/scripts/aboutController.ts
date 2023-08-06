@@ -18,3 +18,9 @@ export function initAboutObserver() {
   );
   observer.observe(aboutComponent);
 }
+
+export function highlight(id: string, on: boolean) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  target.style.webkitTextFillColor = on ? '' : 'white';
+}
