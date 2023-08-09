@@ -9,30 +9,6 @@ export default function IntroComponent() {
   useEffect(() => {
     initIntroObserver();
   });
-  const img1 = (
-    <Image
-      src="/img/intro/intro_1.jpg"
-      alt="Picture representing 'dive into unknown'"
-      fill={true}
-      style={{ objectFit: 'cover' }}
-    />
-  );
-  const img2 = (
-    <Image
-      src="/img/intro/intro_2.jpg"
-      alt="Picture of comet's tail"
-      fill={true}
-      style={{ objectFit: 'cover' }}
-    />
-  );
-  const img3 = (
-    <Image
-      src="/img/intro/intro_3.jpg"
-      alt="Picture of a person pointing at comet"
-      fill={true}
-      style={{ objectFit: 'cover' }}
-    />
-  );
 
   return (
     <>
@@ -43,7 +19,7 @@ export default function IntroComponent() {
         </h1>
         <div className={styles.stickyWrapper}>
           <div className={styles.item} id={styles.item1}>
-            <div className={styles.background}>{img1}</div>
+            <div className={styles.background}>{images.img1}</div>
             <div className={styles.content}>
               <div className={styles.subTitle}>
                 <h2>Deep dive into the unknown</h2>
@@ -64,7 +40,7 @@ export default function IntroComponent() {
         </div>
         <div className={styles.stickyWrapper}>
           <div className={styles.item} id={styles.item2}>
-            <div className={styles.background}>{img2}</div>
+            <div className={styles.background}>{images.img2}</div>
             <div className={styles.content}>
               <div className={styles.subTitle}>
                 <h2>아름다운 흔적</h2>
@@ -86,7 +62,7 @@ export default function IntroComponent() {
         </div>
         <div className={styles.stickyWrapper}>
           <div className={styles.item} id={styles.item3}>
-            <div className={styles.background}>{img3}</div>
+            <div className={styles.background}>{images.img3}</div>
             <div className={styles.content}>
               <div className={styles.subTitle}>
                 <h2>혜성과도 같은</h2>
@@ -112,3 +88,30 @@ export default function IntroComponent() {
     </>
   );
 }
+
+const images = {
+  img1: (
+    <Image
+      src="/img/intro/intro_1.jpg"
+      alt="Picture representing 'dive into unknown'"
+      fill={true}
+      style={{ objectFit: 'cover' }}
+    />
+  ),
+  img2: (
+    <Image
+      src="/img/intro/intro_2.jpg"
+      alt="Picture of comet's tail"
+      fill={true}
+      style={{ objectFit: 'cover' }}
+    />
+  ),
+  img3: (
+    <Image
+      src="/img/intro/intro_3.jpg"
+      alt="Picture of a person pointing at comet"
+      fill={true}
+      style={{ objectFit: 'cover' }}
+    />
+  ),
+};
