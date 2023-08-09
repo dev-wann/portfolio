@@ -1,55 +1,60 @@
 .contactWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 95%;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  margin: auto;
 }
 
 .contentWrapper {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .content {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    column-gap: max(16px, 1vw);
-    margin-bottom: max(20px, 1.25vw);
-    transform-origin: center left;
-    transition: all 200ms;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  column-gap: max(16px, 1vw);
+  margin-bottom: max(20px, 1.25vw);
+  transform-origin: center left;
+  transition: all 200ms;
 }
 
 .content:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .content > a {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
-    font-size: max(48px, 3vw);
-    font-weight: bold;
+  font-size: max(48px, 3vw);
+  font-weight: bold;
 }
 
 .icon {
-    display: inline-block;
-    position: relative;
-    width: max(32px, 2vw);
-    height: max(32px, 2vw);
+  display: inline-block;
+  position: relative;
+  width: max(32px, 2vw);
+  height: max(32px, 2vw);
 }
 
 .desc {
-    font-size: max(24px, 1.5vw);
-    margin: 0;
+  font-size: max(24px, 1.5vw);
+  margin: 0;
 }
 
 .desc:nth-child(2) {
-    font-weight: bold;
-    width: max(104px, 6.5vw);
+  font-weight: bold;
+  width: max(104px, 6.5vw);
+}
+
+.footer {
+  width: 100vw;
+  height: 5vh;
 }

@@ -1,5 +1,3 @@
-'use client';
-
 import styles from './navigation.module.css';
 import Link from 'next/link';
 
