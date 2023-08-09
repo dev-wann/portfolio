@@ -89,8 +89,7 @@ export default function AboutComponent() {
           <h3>Description</h3>
           <ul>
             <li>Electron 기반 오피스 제품군(SuperOffice) 개발</li>
-            <li>다중 사용자 동시 편집 기능 구현</li>
-            <li>다양한 UI 기능 구현</li>
+            <li>다중 사용자 동시 편집 기능 및 다양한 UI 기능 구현</li>
           </ul>
         </div>
         <div className={styles.stack}>

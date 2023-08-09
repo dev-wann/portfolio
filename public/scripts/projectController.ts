@@ -11,7 +11,7 @@ export function organizeFolder() {
     page.style.left = `${(i * 20) / (pageNum - 1)}px`;
     page.style.bottom = `${(i * 20) / (pageNum - 1) + 40}px`;
     if (i !== 0 && i !== pageNum - 1) {
-      // index 생성
+      // index 정렬
       let indexFace = page.children.item(0)?.children.item(0) as HTMLElement;
       let indexBack = page.children.item(1)?.children.item(0) as HTMLElement;
       let left = `calc(1vw + (100% - 2vw - 15vw) * ${(i - 1) / (pageNum - 3)})`;

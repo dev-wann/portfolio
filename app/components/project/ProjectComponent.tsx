@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './project.module.css';
-import Page1 from './Page1';
-import Page2 from './Page2';
-import Page3 from './Page3';
+import Portfolio from './Portfolio';
+import SuperOffice from './SuperOffice';
+import ToOffice from './ToOffice';
 import {
   flipBack,
   flipForward,
@@ -42,7 +42,7 @@ export default function ProjectComponent() {
     <div className={styles.instItem}>
       <div className={styles.instImg}>{images.leftClick}</div>
       <div className={styles.instText}>
-        <p>Left click</p>
+        <p>Click left</p>
         <p>to turn</p>
         <p>the page</p>
         <p>Forward</p>
@@ -54,7 +54,7 @@ export default function ProjectComponent() {
     <div className={styles.instItem}>
       <div className={styles.instImg}>{images.rightClick}</div>
       <div className={styles.instText}>
-        <p>Right click</p>
+        <p>Click right</p>
         <p>to turn</p>
         <p>the page</p>
         <p>Backward</p>
@@ -119,9 +119,9 @@ export default function ProjectComponent() {
                 </div>
                 <div />
               </div>
-              <Page1 />
-              <Page2 />
-              <Page3 />
+              <Portfolio page={1} />
+              <SuperOffice page={2} />
+              <ToOffice page={3} />
               <div className={styles.backCover}>
                 <div>
                   <p>Double click to close the folder</p>
@@ -144,7 +144,7 @@ const images = {
   leftClick: (
     <Image
       src="/img/project/left_click.png"
-      alt="left click to turn the page"
+      alt="click left to turn the page"
       fill={true}
       style={{ objectFit: 'contain' }}
     ></Image>
@@ -152,7 +152,7 @@ const images = {
   rightClick: (
     <Image
       src="/img/project/right_click.png"
-      alt="right click to turn back the page"
+      alt="click right to turn back the page"
       fill={true}
       style={{ objectFit: 'contain' }}
     ></Image>

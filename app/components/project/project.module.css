@@ -193,17 +193,6 @@
   border-radius: 10px 10px 0 0;
 }
 
-.index > p:after {
-  position: absolute;
-  width: 2.8vh;
-  height: 2.8vh;
-  left: 100%;
-  top: 0px;
-  border-radius: 0 5px 5px 0;
-  background-color: #27a8f7;
-  content: '';
-}
-
 .index > p {
   position: absolute;
   width: calc(13vw - 2.8vh);
@@ -217,6 +206,17 @@
   font-size: min(1.8vh, 1.5vw);
   font-weight: bold;
   text-align: center;
+}
+
+.index > p:after {
+  position: absolute;
+  width: 2.8vh;
+  height: 2.8vh;
+  left: 100%;
+  top: 0px;
+  border-radius: 0 5px 5px 0;
+  background-color: #27a8f7;
+  content: '';
 }
 
 .item {

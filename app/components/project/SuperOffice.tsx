@@ -1,7 +1,7 @@
 import styles from './project.module.css';
 
-export default function Page2() {
-  const superoffice = (
+export default function Page2({ page }: { page: number }) {
+  const content = (
     <div className={styles.item}>
       <h1>Project Name</h1>
       <p>
@@ -42,13 +42,14 @@ export default function Page2() {
       </p>
     </div>
   );
+
   return (
     <div className={styles.page}>
       <div>
         <div className={styles.index}>
-          <p>&nbsp;Project #2</p>
+          <p>&nbsp;Project #{page}</p>
         </div>
-        {superoffice}
+        {content}
       </div>
       <div>
         <div className={styles.index}></div>
