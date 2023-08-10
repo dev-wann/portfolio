@@ -11,7 +11,7 @@
 }
 
 .topPlaceHolder {
-  height: 40vh;
+  height: 35vh;
 }
 
 .bottomPlaceHolder {
@@ -24,7 +24,7 @@
   left: 50vw;
   height: 40vh;
   text-align: center;
-  font-size: 10vh;
+  font-size: 5em;
   transition: all 500ms;
 }
 

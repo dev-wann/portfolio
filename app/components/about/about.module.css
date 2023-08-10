@@ -260,20 +260,3 @@
 .bottomPlaceHolder {
   height: 30vh;
 }
-
-.colorfulText {
-  color: #b9e8e8;
-  background-image: linear-gradient(92deg, #b9e8e8, #b4dbf6);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: hue 6s infinite linear;
-}
-
-@keyframes hue {
-  from {
-    -webkit-filter: hue-rotate(0deg);
-  }
-  to {
-    -webkit-filter: hue-rotate(-360deg);
-  }
-}

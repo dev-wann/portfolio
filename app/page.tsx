@@ -1,37 +1,97 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Script from 'next/script';
 import {
   drawWelcomeCanvas,
   stopWelcomeCanvas,
 } from '@/public/scripts/canvas_welcome';
+import Typing from '@/public/scripts/typing';
+import localFont from 'next/font/local';
+
+const font = localFont({ src: '../public/fonts/retganon.ttf' });
 
 export default function Welcome() {
   const router = useRouter();
-  let timeoutID: number;
-
+  const welcomeRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef(null);
+  const desc1Ref = useRef(null);
+  const desc2Ref = useRef(null);
+  const typeTitle = useRef<Typing>();
+  const typeDesc1 = useRef<Typing>();
+  const typeDesc2 = useRef<Typing>();
   useEffect(() => {
-    document.body.classList.add('disableYScroll');
+    // draw backgroudn canvas
     drawWelcomeCanvas();
+
+    // setting for typing effect
+    (welcomeRef.current as HTMLElement).style.transform =
+      'translateX(-50%) scale(1)';
+    typeTitle.current = new Typing(titleRef.current, {
+      str: 'Welcome.',
+      backSpeed: 16,
+      preDelay: 250,
+      postDelay: 1400,
+      removeCursorAtFinish: true,
+    });
+    typeDesc1.current = new Typing(desc1Ref.current, {
+      str: 'Please move your mouse freely.',
+      backSpeed: 60,
+      preDelay: 100,
+      postDelay: 1000,
+      removeCursorAtFinish: true,
+    });
+    typeDesc2.current = new Typing(desc2Ref.current, {
+      str: 'To Dive in,\nClick and hold your left mouse button for 4 seconds.',
+      backSpeed: 128,
+      preDelay: 100,
+    });
+    typeTitle.current
+      .start()
+      .then(() => typeDesc1.current?.start())
+      .then(() => typeDesc2.current?.start());
+
+    // block scroll
+    document.body.classList.add('disable-y-scroll');
     return () => {
-      document.body.classList.remove('disableYScroll');
+      document.body.classList.remove('disable-y-scroll');
       stopWelcomeCanvas();
     };
   });
 
+  let timeoutIDs: number[] = [];
+
   const handleMouseDown = (e: React.MouseEvent) => {
     if (e.button !== 0) return; // treat only left button
-    timeoutID = window.setTimeout(() => {
-      router.push('/home');
-    }, 3500);
+
+    timeoutIDs.push(
+      window.setTimeout(() => {
+        typeTitle.current?.clear();
+        typeDesc1.current?.clear();
+        typeDesc2.current?.clear();
+      }, 2500),
+      window.setTimeout(() => {
+        (welcomeRef.current as HTMLElement).style.transform = '';
+      }, 3000),
+      window.setTimeout(() => {
+        router.push('/home');
+      }, 3500)
+    );
+
     e.preventDefault();
   };
 
   const handleMouseUp = (e: React.MouseEvent) => {
     if (e.button !== 0) return; // treat only left button
-    window.clearTimeout(timeoutID);
+    while (timeoutIDs.length) {
+      window.clearTimeout(timeoutIDs.pop());
+    }
+    (welcomeRef.current as HTMLElement).style.transform =
+      'translateX(-50%) scale(1)';
+    typeTitle.current?.restart();
+    typeDesc1.current?.restart();
+    typeDesc2.current?.restart();
     e.preventDefault();
   };
 
@@ -41,13 +101,10 @@ export default function Welcome() {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
     >
-      <div className="welcome">
-        <h1>Welcome</h1>
-        <h3>Please Move your mouse freely.</h3>
-        <h3>
-          To Dive in,<br></br>
-          Hold down your left mouse button for 4 seconds.
-        </h3>
+      <div className="welcome" ref={welcomeRef} style={font.style}>
+        <p ref={titleRef} style={{ fontSize: '3em', fontWeight: 'bold' }}></p>
+        <p ref={desc1Ref} style={{ fontSize: '1.8em' }}></p>
+        <p ref={desc2Ref} style={{ fontSize: '1.8em' }}></p>
       </div>
       <canvas id="canvas_welcome"></canvas>
       <Script src="/scripts/canvas_welcome.js" type="module"></Script>

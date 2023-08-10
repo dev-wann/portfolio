@@ -33,7 +33,7 @@ export default function AboutComponent() {
         <div className={styles.headerContent}>
           <h2 style={{ marginBottom: '1vh' }}>Who am I?</h2>
           <div className={styles.headerTitle}>
-            <span className={styles.colorfulText} style={{ fontSize: '1.7em' }}>
+            <span className="colorful-text" style={{ fontSize: '1.7em' }}>
               새로움
             </span>
             을 찾아 헤메는 개발자
@@ -71,7 +71,7 @@ export default function AboutComponent() {
     >
       <h1>
         <span
-          className={styles.colorfulText}
+          className="colorful-text"
           style={{ WebkitTextFillColor: 'white' }}
           id="careerText"
         >
@@ -135,7 +135,7 @@ export default function AboutComponent() {
     >
       <h1>
         <span
-          className={styles.colorfulText}
+          className="colorful-text"
           style={{ WebkitTextFillColor: 'white' }}
           id="skillsText"
         >
@@ -170,7 +170,7 @@ export default function AboutComponent() {
     >
       <h1>
         <span
-          className={styles.colorfulText}
+          className="colorful-text"
           style={{ WebkitTextFillColor: 'white' }}
           id="eduText"
         >

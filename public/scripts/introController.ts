@@ -1,12 +1,13 @@
+import Typing from './typing';
 import styles from '/app/components/intro/intro.module.css';
 
-export function initIntroObserver() {
-  observeTitle();
+export function initIntroObserver(typeTitle: Typing, typeTitleSub: Typing) {
+  observeTitle(typeTitle);
   observeBackground();
-  observeDescriptionText();
+  observeDescriptionText(typeTitleSub);
 }
 
-function observeTitle() {
+function observeTitle(typeTitle: Typing) {
   const introTitle = document.getElementById('introTitle');
   const firstBackground = document
     .getElementsByClassName(styles.background)
@@ -22,8 +23,13 @@ function observeTitle() {
   ) => {
     entries.forEach((entry) => {
       if (entry.target !== firstBackground) return;
-      if (entry.isIntersecting) introTitle.style.fontSize = '5vh';
-      else introTitle.style.fontSize = '10vh';
+      if (entry.isIntersecting) {
+        introTitle.style.fontSize = '3em';
+        typeTitle.removeCursor();
+      } else {
+        introTitle.style.fontSize = '6em';
+        typeTitle.addCursor();
+      }
     });
   };
 
@@ -58,7 +64,7 @@ function observeBackground() {
   }
 }
 
-function observeDescriptionText() {
+function observeDescriptionText(typeTitleSub: Typing) {
   const introText1_before = document.getElementById('introText1_before');
   const introText1_after = document.getElementById('introText1_after');
   const introText2_before = document.getElementById('introText2_before');
@@ -97,6 +103,7 @@ function observeDescriptionText() {
         introText1_after.style.opacity = '1';
         introText2_after.style.opacity = '1';
         introText3_after.style.opacity = '1';
+        typeTitleSub.start();
       } else if (entry.boundingClientRect.top > 0) {
         introText1_before.style.opacity = '1';
         introText2_before.style.opacity = '1';
@@ -107,6 +114,7 @@ function observeDescriptionText() {
         introText1_after.style.opacity = '0';
         introText2_after.style.opacity = '0';
         introText3_after.style.opacity = '0';
+        typeTitleSub.clear();
       }
     });
   };

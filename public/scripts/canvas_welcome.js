@@ -26,7 +26,7 @@ let mouseX, mouseY;
 let speed = DEFAULT_SPEED;
 let targetSpeed = DEFAULT_SPEED;
 let startTime = undefined;
-let blackoutProgress = 0;
+let blackoutProgress = 2;
 let intervalID;
 
 class Particle {

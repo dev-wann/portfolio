@@ -1,13 +1,27 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './intro.module.css';
 import Image from 'next/image';
 import { initIntroObserver } from '@/public/scripts/introController';
+import Typing from '@/public/scripts/typing';
 
 export default function IntroComponent() {
+  const titleRef = useRef<HTMLSpanElement>(null);
+  const titleSubRef = useRef<HTMLSpanElement>(null);
+  const typeTitle = useRef<Typing>();
+  const typeTitleSub = useRef<Typing>();
   useEffect(() => {
-    initIntroObserver();
+    typeTitle.current = new Typing(titleRef.current, {
+      str: '혜성',
+      speed: 8,
+    });
+    typeTitle.current.start();
+    typeTitleSub.current = new Typing(titleSubRef.current, {
+      str: '을 닮고픈 개발자',
+      showCursor: false,
+    });
+    initIntroObserver(typeTitle.current, typeTitleSub.current);
   });
 
   return (
@@ -15,7 +29,8 @@ export default function IntroComponent() {
       <div className={styles.introWrapper} id="intro">
         <div className={styles.topPlaceHolder}></div>
         <h1 className={styles.title} id="introTitle">
-          혜성
+          <span ref={titleRef} className="colorful-text"></span>
+          <span ref={titleSubRef} style={{ fontSize: '0.8em' }}></span>
         </h1>
         <div className={styles.stickyWrapper}>
           <div className={styles.item} id={styles.item1}>
