@@ -57,7 +57,7 @@
   transform: translate(-50%);
   opacity: 0;
   text-align: center;
-  font-size: max(20px, 1vh);
+  font-size: 1.6em;
   font-weight: bold;
   transition: all 1s;
 }

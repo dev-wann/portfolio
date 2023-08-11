@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import styles from './contact.module.css';
 import Link from 'next/link';
+import StarryNight from './StarryNight';
 export default function ContactComponent() {
   return (
     <>
-      <div className={styles.contactWrapper} id="conatactWrapper">
+      <div className={styles.contactWrapper} id="contact">
         <p className={styles.title}>Contact</p>
         <div className={styles.contentWrapper}>
           <div className={styles.content}>
@@ -26,8 +27,14 @@ export default function ContactComponent() {
             <Link href="https://dev-wann.tistory.com"></Link>
           </div>
         </div>
+        <div className={styles.background}>
+          <StarryNight />
+          {images.hill1}
+          {images.hill2}
+          {images.hill3}
+        </div>
+        <div className={styles.footer} id="footer"></div>
       </div>
-      <div className={styles.footer} id="footer"></div>
     </>
   );
 }
@@ -55,6 +62,30 @@ const images = {
       alt="Blog icon"
       fill={true}
       style={{ objectFit: 'contain', filter: 'invert(100%)' }}
+    ></Image>
+  ),
+  hill1: (
+    <Image
+      src="/img/contact/hill-1.png"
+      alt="hill"
+      fill={true}
+      style={{ objectFit: 'contain' }}
+    ></Image>
+  ),
+  hill2: (
+    <Image
+      src="/img/contact/hill-2.png"
+      alt="hill"
+      fill={true}
+      style={{ objectFit: 'contain' }}
+    ></Image>
+  ),
+  hill3: (
+    <Image
+      src="/img/contact/hill-3.png"
+      alt="hill"
+      fill={true}
+      style={{ objectFit: 'contain' }}
     ></Image>
   ),
 };

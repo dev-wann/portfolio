@@ -1,14 +1,16 @@
 .contactWrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 95vh;
+  height: 100vh;
   margin: auto;
 }
 
 .contentWrapper {
-  margin: 0 auto;
+  box-sizing: border-box;
+  margin: 0 auto 10vh auto;
 }
 
 .content {
@@ -54,7 +56,22 @@
   width: max(104px, 6.5vw);
 }
 
+.background {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, black, #03217f 80%);
+  z-index: -1;
+}
+
+.background > img {
+  object-position: center bottom;
+}
+
 .footer {
+  position: absolute;
+  bottom: 0px;
   width: 100vw;
   height: 5vh;
 }

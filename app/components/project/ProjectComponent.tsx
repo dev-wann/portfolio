@@ -23,7 +23,7 @@ export default function ProjectComponent() {
     setInterval(() => {
       induceFlip(page.current);
     }, 4000);
-    const contactComponent = document.getElementById('conatactWrapper');
+    const contactComponent = document.getElementById('contact');
     const observer = new IntersectionObserver(
       (entries, _observer) => {
         if (!entries.at(0)?.isIntersecting) return;
