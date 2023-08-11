@@ -96,7 +96,7 @@ img {
   background-image: linear-gradient(92deg, #b9e8e8, #b4dbf6);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: hue 6s infinite linear;
+  animation: hue 4s infinite linear;
 }
 
 @keyframes hue {

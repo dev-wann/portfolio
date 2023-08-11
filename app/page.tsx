@@ -21,6 +21,8 @@ export default function Welcome() {
   const typeTitle = useRef<Typing>();
   const typeDesc1 = useRef<Typing>();
   const typeDesc2 = useRef<Typing>();
+  const isRouting = useRef(false);
+
   useEffect(() => {
     // draw backgroudn canvas
     drawWelcomeCanvas();
@@ -76,6 +78,7 @@ export default function Welcome() {
       }, 3000),
       window.setTimeout(() => {
         router.push('/home');
+        isRouting.current = true;
       }, 3500)
     );
 
@@ -83,6 +86,7 @@ export default function Welcome() {
   };
 
   const handleMouseUp = (e: React.MouseEvent) => {
+    if (isRouting.current) return;
     if (e.button !== 0) return; // treat only left button
     while (timeoutIDs.length) {
       window.clearTimeout(timeoutIDs.pop());
