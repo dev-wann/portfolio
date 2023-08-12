@@ -10,7 +10,7 @@ export default function Navigation() {
       <div className={styles.navigation}>
         <Link
           href="/"
-          className={styles.item}
+          className={`${styles.item} ${styles.toWelcome}`}
           style={{ ...font.style, fontSize: '2em' }}
         >
           Welcome

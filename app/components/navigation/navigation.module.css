@@ -53,3 +53,7 @@
   color: white;
   transform: scale(1.1);
 }
+
+.item.toWelcome:hover {
+  color: #32ff32;
+}

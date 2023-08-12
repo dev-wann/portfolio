@@ -8,8 +8,8 @@ const BLACKOUT_TIME = 2500;
 const COMET_RADIUS = 10;
 const COMET_Z = 800;
 const COMET_RATIO = 1.2;
-const COMET_COLOR = '#62d2fc';
-const COMET_SHADOW_COLOR = '#ffffff';
+const COMET_COLOR = '#81c1e7';
+const COMET_SHADOW_COLOR = '#fff8f8';
 
 const backgroundParticles = new Array(PARTICLE_NUM);
 const cometParticles = new Array(PARTICLE_NUM * COMET_RATIO);
@@ -61,7 +61,7 @@ class CometParticle extends Particle {
   }
 }
 
-export function drawWelcomeCanvas() {
+export function initWelcomeCanvas() {
   const canvas = document.getElementById('canvas_welcome');
 
   // event handling
@@ -115,8 +115,9 @@ export function drawWelcomeCanvas() {
     particle.z -= COMET_Z * Math.random();
     cometParticles[i] = particle;
   }
+}
 
-  // animation
+export function startWelcomeCanvas() {
   intervalID = setInterval(loop, 1000 / 60);
 }
 
@@ -173,6 +174,7 @@ function drawComet(speed, cx, cy) {
 
   context.fillStyle = COMET_COLOR;
   context.shadowColor = COMET_SHADOW_COLOR;
+  context.filter = 'blur(1px)';
   context.shadowBlur = 25;
   context.beginPath();
   context.arc(px, py, pr, 0, 2 * pi);
@@ -180,18 +182,21 @@ function drawComet(speed, cx, cy) {
   context.fill();
 
   // draw comet tail
+  context.filter = 'blur(2px)';
   f = FL / (COMET_Z - speed * 100);
   x = cx + rx * f;
   y = cy + ry * f;
   a = atan2(py - y, px - x);
   a1 = a + pi / 2;
   a2 = a - pi / 2;
+  pr *= 1.1;
 
   context.shadowBlur = 40;
   context.beginPath();
   context.moveTo(px + pr * cos(a1), py + pr * sin(a1));
   context.lineTo(mouseX, mouseY);
   context.lineTo(px + pr * cos(a2), py + pr * sin(a2));
+  context.arc(px, py, pr, a2, a1);
   context.closePath();
   context.fill();
 

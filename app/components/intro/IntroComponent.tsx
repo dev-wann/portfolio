@@ -15,6 +15,7 @@ export default function IntroComponent() {
     typeTitle.current = new Typing(titleRef.current, {
       str: '혜성',
       speed: 8,
+      preDelay: 100,
     });
     typeTitle.current.start();
     typeTitleSub.current = new Typing(titleSubRef.current, {

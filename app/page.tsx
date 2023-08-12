@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Script from 'next/script';
 import {
-  drawWelcomeCanvas,
+  initWelcomeCanvas,
+  startWelcomeCanvas,
   stopWelcomeCanvas,
 } from '@/public/scripts/canvas_welcome';
 import Typing from '@/public/scripts/typing';
@@ -25,7 +26,8 @@ export default function Welcome() {
 
   useEffect(() => {
     // draw backgroudn canvas
-    drawWelcomeCanvas();
+    initWelcomeCanvas();
+    startWelcomeCanvas();
 
     // setting for typing effect
     (welcomeRef.current as HTMLElement).style.transform =
@@ -86,7 +88,10 @@ export default function Welcome() {
   };
 
   const handleMouseUp = (e: React.MouseEvent) => {
-    if (isRouting.current) return;
+    if (isRouting.current) {
+      stopWelcomeCanvas();
+      return;
+    }
     if (e.button !== 0) return; // treat only left button
     while (timeoutIDs.length) {
       window.clearTimeout(timeoutIDs.pop());
