@@ -1,13 +1,13 @@
 import Typing from './typing';
 import styles from '/app/components/intro/intro.module.css';
 
-export function initIntroObserver(typeTitle: Typing, typeTitleSub: Typing) {
-  observeTitle(typeTitle);
+export function initIntroObserver(typeTitleSub: Typing) {
+  observeTitle();
   observeBackground();
   observeDescriptionText(typeTitleSub);
 }
 
-function observeTitle(typeTitle: Typing) {
+function observeTitle() {
   const introTitle = document.getElementById('introTitle');
   const firstBackground = document
     .getElementsByClassName(styles.background)
@@ -25,10 +25,8 @@ function observeTitle(typeTitle: Typing) {
       if (entry.target !== firstBackground) return;
       if (entry.isIntersecting) {
         introTitle.style.fontSize = '3em';
-        typeTitle.removeCursor();
       } else {
         introTitle.style.fontSize = '6em';
-        typeTitle.addCursor();
       }
     });
   };

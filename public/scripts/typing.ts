@@ -7,7 +7,6 @@ export default class Typing {
       backSpeed?: number;
       preDelay?: number;
       postDelay?: number;
-      // cursorType?: string; // 'text' or 'dot'
       showCursor?: boolean;
       removeCursorAtFinish?: boolean;
     }
@@ -18,7 +17,6 @@ export default class Typing {
     this.backSpeed = options.backSpeed || 20;
     this.preDelay = options.preDelay || 0;
     this.postDelay = options.postDelay || 0;
-    this.cursorType = 'typing-cursor-text';
     this.showCursor =
       options.showCursor === undefined ? true : options.showCursor;
     this.removeCursorAtFinish = options.removeCursorAtFinish || false;
@@ -31,42 +29,55 @@ export default class Typing {
   backSpeed: number; // char per second
   preDelay: number; // ms
   postDelay: number; // ms
-  cursorType: string; // 'typing-cursor-text' or 'typing-cursor-dot'
   showCursor: boolean;
   removeCursorAtFinish: boolean;
   curIdx: number;
   timeoutID?: number;
 
   async start() {
+    // preDelay
     await this.wait(this.preDelay);
-    if (this.showCursor) this.addCursor();
+    // write
+    if (this.showCursor) this.addCursor('typing-cursor');
     while (this.curIdx < this.str.length) {
       await this.write();
     }
-    await this.wait(this.postDelay);
-    if (this.showCursor && this.removeCursorAtFinish) {
+    if (this.showCursor) {
       this.removeCursor();
+      this.addCursor('waiting-cursor');
     }
+    // postDelay
+    await this.wait(this.postDelay);
+    if (this.removeCursorAtFinish) this.removeCursor();
+
     return new Promise((res) => res(''));
   }
 
   async clear() {
     clearTimeout(this.timeoutID);
+    if (this.showCursor) this.addCursor('typing-cursor');
     while (this.curIdx > 0) {
       await this.backspace();
     }
+    if (this.showCursor) {
+      this.removeCursor();
+      this.addCursor('waiting-cursor');
+    }
+    if (this.removeCursorAtFinish) this.removeCursor();
   }
 
   async restart() {
     clearTimeout(this.timeoutID);
-    if (this.showCursor) this.addCursor();
+    if (this.showCursor) this.addCursor('typing-cursor');
     while (this.curIdx < this.str.length) {
       await this.write();
     }
-    await this.wait(this.postDelay);
-    if (this.showCursor && this.removeCursorAtFinish) {
+    if (this.showCursor) {
       this.removeCursor();
+      this.addCursor('waiting-cursor');
     }
+    await this.wait(this.postDelay);
+    if (this.removeCursorAtFinish) this.removeCursor();
   }
 
   async write() {
@@ -89,11 +100,12 @@ export default class Typing {
     });
   }
 
-  addCursor() {
-    this.element?.classList.add(this.cursorType);
+  addCursor(cursor: string) {
+    this.element?.classList.add(cursor);
   }
 
   removeCursor() {
-    this.element?.classList.remove(this.cursorType);
+    this.element?.classList.remove('typing-cursor');
+    this.element?.classList.remove('waiting-cursor');
   }
 }

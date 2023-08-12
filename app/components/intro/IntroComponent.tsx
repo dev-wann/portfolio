@@ -15,6 +15,7 @@ export default function IntroComponent() {
     typeTitle.current = new Typing(titleRef.current, {
       str: '혜성',
       speed: 8,
+      showCursor: false,
       preDelay: 100,
     });
     typeTitle.current.start();
@@ -22,7 +23,7 @@ export default function IntroComponent() {
       str: '을 닮고픈 개발자',
       showCursor: false,
     });
-    initIntroObserver(typeTitle.current, typeTitleSub.current);
+    initIntroObserver(typeTitleSub.current);
   });
 
   return (

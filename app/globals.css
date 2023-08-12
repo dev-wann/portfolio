@@ -77,10 +77,17 @@ img {
   overflow-y: hidden;
 }
 
-.typing-cursor-text {
+.typing-cursor {
   position: relative;
 }
-.typing-cursor-text:after {
+.typing-cursor:after {
+  position: absolute;
+  content: '|';
+}
+.waiting-cursor {
+  position: relative;
+}
+.waiting-cursor:after {
   position: absolute;
   content: '|';
   animation: cursor 1s infinite step-start;
