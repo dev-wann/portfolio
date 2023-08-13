@@ -24,9 +24,9 @@ function observeTitle() {
     entries.forEach((entry) => {
       if (entry.target !== firstBackground) return;
       if (entry.isIntersecting) {
-        introTitle.style.fontSize = '3em';
+        introTitle.style.fontSize = '4.5em';
       } else {
-        introTitle.style.fontSize = '6em';
+        introTitle.style.fontSize = '10em';
       }
     });
   };
@@ -95,9 +95,9 @@ function observeDescriptionText(typeTitleSub: Typing) {
         introText1_before.style.opacity = '0.6';
         introText2_before.style.opacity = '0.6';
         introText3_before.style.opacity = '0.6';
-        introText1_before.style.transform = 'translate(0, 150%)';
-        introText2_before.style.transform = 'translate(0, 150%)';
-        introText3_before.style.transform = 'translate(0, 150%)';
+        introText1_before.style.transform = 'translate(0, 125%)';
+        introText2_before.style.transform = 'translate(0, 125%)';
+        introText3_before.style.transform = 'translate(0, 125%)';
         introText1_after.style.opacity = '1';
         introText2_after.style.opacity = '1';
         introText3_after.style.opacity = '1';
