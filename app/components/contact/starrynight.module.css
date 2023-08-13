@@ -5,3 +5,26 @@
   left: 0px;
   top: 0px;
 }
+
+.hill {
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+}
+
+.hill > img {
+  object-position: 50% 100%;
+}
+
+.ground {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 0px;
+  background-color: #010719;
+  transition: all 1s;
+  z-index: 1;
+}

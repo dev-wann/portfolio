@@ -5,6 +5,7 @@
   transform: translateX(-50%);
   transition: all 500ms;
   opacity: 0;
+  z-index: 999;
 }
 
 .scroll > p {
@@ -60,4 +61,5 @@
   font-size: 1.6em;
   font-weight: bold;
   transition: all 1s;
+  z-index: 999;
 }

@@ -88,7 +88,7 @@ export default function AboutComponent() {
         <div className={styles.desc}>
           <h3>Description</h3>
           <ul>
-            <li>Electron 기반 오피스 제품군(SuperOffice) 개발</li>
+            <li>Web & Electron 기반 오피스 제품군(SuperOffice) 개발</li>
             <li>다중 사용자 동시 편집 기능 및 다양한 UI 기능 구현</li>
           </ul>
         </div>
@@ -146,11 +146,11 @@ export default function AboutComponent() {
         <h3>Web development</h3>
         <div className={styles.skillsLogo}>
           {images.typescript} {images.react} {images.mobx} {images.html}
-          {images.css} {images.javascript} {images.electron} {images.jest}
+          {images.css} {images.javascript} {images.jest}
         </div>
         <h3>Extra</h3>
         <div className={styles.skillsLogo}>
-          {images.gitlab} {images.github} {images.cpp}
+          {images.gitlab} {images.github} {images.electron} {images.cpp}
         </div>
       </div>
     </div>

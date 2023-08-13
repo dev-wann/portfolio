@@ -6,11 +6,12 @@
   justify-content: center;
   height: 100vh;
   margin: auto;
+  background-image: linear-gradient(180deg, black, #0834c6);
 }
 
 .contentWrapper {
   box-sizing: border-box;
-  margin: 0 auto 10vh auto;
+  margin: 0 auto 5vh auto;
 }
 
 .content {
@@ -35,7 +36,7 @@
 }
 
 .title {
-  font-size: max(48px, 3vw);
+  font-size: max(56px, 3.5vw);
   font-weight: bold;
 }
 
@@ -54,19 +55,6 @@
 .desc:nth-child(2) {
   font-weight: bold;
   width: max(104px, 6.5vw);
-}
-
-.background {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(180deg, black, #03217f 80%);
-  z-index: -1;
-}
-
-.background > img {
-  object-position: center bottom;
 }
 
 .footer {

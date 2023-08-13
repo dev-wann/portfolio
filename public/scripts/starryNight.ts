@@ -1,4 +1,4 @@
-const STAR_NUM = 500;
+const STAR_NUM = 150;
 const STAR_SPEED = 0.4;
 const SHOOTING_STAR_SPEED = 8;
 const TAIL_LENGTH = 150;
@@ -66,8 +66,13 @@ export function initStarrySky() {
   const observer = new IntersectionObserver(
     (entries, _observer) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) startDrawing();
-        else stopDrawing();
+        if (entry.isIntersecting) {
+          startDrawing();
+          startParallex();
+        } else {
+          stopDrawing();
+          stopParallex();
+        }
       });
     },
     { threshold: 0.1 }
@@ -75,11 +80,11 @@ export function initStarrySky() {
   if (contactElement) observer.observe(contactElement);
 }
 
-export function startDrawing() {
+function startDrawing() {
   intervalID = window.setInterval(loop, 1000 / 60);
 }
 
-export function stopDrawing() {
+function stopDrawing() {
   window.clearInterval(intervalID);
 }
 
@@ -158,4 +163,50 @@ function resize(canvas: HTMLCanvasElement) {
   canvasHeight = canvas.height = window.innerHeight;
   shootingStarOffset = canvasHeight / tan60;
   context = canvas.getContext('2d');
+}
+
+function startParallex() {
+  window.addEventListener('scroll', moveHillsThrottled);
+  window.addEventListener('scrollend', moveHills);
+}
+
+function stopParallex() {
+  window.removeEventListener('scroll', moveHillsThrottled);
+  window.removeEventListener('scrollend', moveHills);
+}
+
+let timerId: number | null;
+function moveHillsThrottled() {
+  if (timerId) return;
+  timerId = window.setTimeout(() => {
+    moveHills();
+    timerId = null;
+  }, 300);
+}
+
+function moveHills() {
+  const hills = document.getElementsByClassName('hill');
+  const ground = document.getElementById('ground');
+  if (!hills || !ground) return;
+
+  const hillNum = hills.length;
+  if (hillNum === 0) return;
+
+  let scrollRatio =
+    (document.body.scrollHeight - window.scrollY) / window.innerHeight - 1;
+  scrollRatio = Math.min(scrollRatio, 0.4);
+
+  const scale = 1.5;
+  const diff = 0.8;
+  let hill: HTMLElement;
+  let bottom;
+  for (let i = 0; i < hillNum; i += 1) {
+    hill = hills.item(hillNum - 1 - i) as HTMLElement;
+    bottom =
+      window.innerHeight * scale * scrollRatio * (1 - (i * diff) / hillNum);
+    bottom = Math.max(bottom, 0);
+    hill.style.bottom = `${bottom}px`;
+  }
+  bottom = Math.max(window.innerHeight * scale * scrollRatio, 0);
+  ground.style.height = `${bottom}px`;
 }
