@@ -86,7 +86,6 @@ export default function AboutComponent() {
           2020.08 ~ 2023.05
         </p>
         <div className={styles.desc}>
-          <h3>Description</h3>
           <ul>
             <li>Web & Electron 기반 오피스 제품군(SuperOffice) 개발</li>
             <li>다중 사용자 동시 편집 기능 및 다양한 UI 기능 구현</li>
@@ -107,7 +106,6 @@ export default function AboutComponent() {
           2019.08 ~ 2020.07
         </p>
         <div className={styles.desc}>
-          <h3>Description</h3>
           <ul>
             <li>데스크탑 오피스 제품군(ToOffice) 개발</li>
             <li>Layout algorithm 개발 및 유지보수</li>
