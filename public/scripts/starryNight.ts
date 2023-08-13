@@ -6,6 +6,8 @@ const pi = Math.PI;
 const cos60 = Math.cos(pi / 3);
 const sin60 = Math.sin(pi / 3);
 const tan60 = Math.tan(pi / 3);
+const blurRad = 2;
+const blurInt = 0.2;
 
 let canvas: HTMLCanvasElement;
 let canvasWidth: number, canvasHeight: number;
@@ -87,7 +89,6 @@ function loop() {
   context.fillStyle = '#ffffff';
   context.shadowColor = '#ffffff';
   context.shadowBlur = 8;
-  context.filter = 'blur(1px)';
 
   drawStar();
   drawShootingStar();
@@ -107,6 +108,20 @@ function drawStar() {
     context.closePath();
   }
   context.fill();
+
+  // blur effect
+  context.globalAlpha = blurInt / blurRad;
+  for (let i = 0; i < STAR_NUM; i += 1) {
+    star = stars[i];
+    if (star.x <= 0) continue;
+    for (let dr = blurRad; dr > 0; dr -= 1) {
+      context.moveTo(star.x, star.y);
+      context.arc(star.x, star.y, star.size + dr, 0, 2 * pi);
+      context.closePath();
+    }
+  }
+  context.fill();
+  context.globalAlpha = 1;
 }
 
 function drawShootingStar() {

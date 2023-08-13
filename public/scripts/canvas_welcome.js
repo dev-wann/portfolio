@@ -13,6 +13,17 @@ const COMET_SHADOW_COLOR = '#fff8f8';
 
 const backgroundParticles = new Array(PARTICLE_NUM);
 const cometParticles = new Array(PARTICLE_NUM * COMET_RATIO);
+const blurRad = 2;
+const blurArr = [
+  [0, 1],
+  [1, 1],
+  [1, 0],
+  [1, -1],
+  [0, -1],
+  [-1, -1],
+  [-1, 0],
+  [-1, 1],
+];
 
 const pi = Math.PI;
 const atan2 = Math.atan2;
@@ -139,21 +150,12 @@ function loop() {
   let cx = centerX - (mouseX - centerX) * 1.25;
   let cy = centerY - (mouseY - centerY) * 1.25;
 
-  resetCanvas();
+  context.clearRect(0, 0, canvasWidth, canvasHeight);
   drawBackgroundParticles(speed, cx, cy);
   drawComet(speed, cx, cy);
   drawCometParticles(speed, cx, cy);
 
   drawBlackout(cx, cy);
-}
-
-function resetCanvas() {
-  context.save();
-
-  context.fillStyle = 'rgb(0, 0, 0)';
-  context.fillRect(0, 0, canvasWidth, canvasHeight);
-
-  context.restore();
 }
 
 function drawComet(speed, cx, cy) {
@@ -174,7 +176,6 @@ function drawComet(speed, cx, cy) {
 
   context.fillStyle = COMET_COLOR;
   context.shadowColor = COMET_SHADOW_COLOR;
-  context.filter = 'blur(1px)';
   context.shadowBlur = 25;
   context.beginPath();
   context.arc(px, py, pr, 0, 2 * pi);
@@ -182,7 +183,6 @@ function drawComet(speed, cx, cy) {
   context.fill();
 
   // draw comet tail
-  context.filter = 'blur(2px)';
   f = FL / (COMET_Z - speed * 100);
   x = cx + rx * f;
   y = cy + ry * f;
@@ -192,6 +192,7 @@ function drawComet(speed, cx, cy) {
   pr *= 1.1;
 
   context.shadowBlur = 40;
+
   context.beginPath();
   context.moveTo(px + pr * cos(a1), py + pr * sin(a1));
   context.lineTo(mouseX, mouseY);
@@ -199,6 +200,22 @@ function drawComet(speed, cx, cy) {
   context.arc(px, py, pr, a2, a1);
   context.closePath();
   context.fill();
+
+  // blur effect
+  context.beginPath();
+  context.globalAlpha = 0.125;
+  for (let i = 0; i < 8; i += 1) {
+    let [dx, dy] = blurArr[i];
+    dx *= blurRad;
+    dy *= blurRad;
+    context.moveTo(px + dx + pr * cos(a1), py + dy + pr * sin(a1));
+    context.lineTo(mouseX + dx, mouseY + dy);
+    context.lineTo(px + dx + pr * cos(a2), py + dy + pr * sin(a2));
+    context.arc(px + dx, py + dy, pr, a2, a1);
+    context.closePath();
+  }
+  context.fill();
+  context.globalAlpha = 1;
 
   context.restore();
 }
@@ -256,7 +273,6 @@ function drawCometParticles(speed, cx, cy) {
     p.y += (p.dy * Math.pow(p.z, 3)) / Math.pow(10, 8);
   }
   context.fill();
-
   context.restore();
 }
 
