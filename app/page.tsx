@@ -7,7 +7,7 @@ import {
   initWelcomeCanvas,
   startWelcomeCanvas,
   stopWelcomeCanvas,
-} from '@/public/scripts/canvas_welcome';
+} from '@/public/scripts/welcomeController';
 import Typing from '@/public/scripts/typing';
 import localFont from 'next/font/local';
 
@@ -23,6 +23,7 @@ export default function Welcome() {
   const typeDesc1 = useRef<Typing>();
   const typeDesc2 = useRef<Typing>();
   const isRouting = useRef(false);
+  const isCleared = useRef(false);
 
   useEffect(() => {
     // draw backgroudn canvas
@@ -74,6 +75,7 @@ export default function Welcome() {
         typeTitle.current?.clear();
         typeDesc1.current?.clear();
         typeDesc2.current?.clear();
+        isCleared.current = true;
       }, 2500),
       window.setTimeout(() => {
         (welcomeRef.current as HTMLElement).style.transform = '';
@@ -93,14 +95,20 @@ export default function Welcome() {
       return;
     }
     if (e.button !== 0) return; // treat only left button
+
     while (timeoutIDs.length) {
       window.clearTimeout(timeoutIDs.pop());
     }
     (welcomeRef.current as HTMLElement).style.transform =
       'translateX(-50%) scale(1)';
-    typeTitle.current?.restart();
-    typeDesc1.current?.restart();
-    typeDesc2.current?.restart();
+
+    if (isCleared.current) {
+      typeTitle.current?.restart();
+      typeDesc1.current?.restart();
+      typeDesc2.current?.restart();
+      isCleared.current = false;
+    }
+
     e.preventDefault();
   };
 

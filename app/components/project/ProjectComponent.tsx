@@ -104,7 +104,7 @@ export default function ProjectComponent() {
         <div className={styles.title}>
           <h2>What I have done</h2>
         </div>
-        <div className={styles.contents}>
+        <div className={`${styles.contents} observeR2L`}>
           <div className={styles.instruction}>{leftClick}</div>
           <div className={styles.folderWrapper}>
             <div className={styles.folder} id="folder">

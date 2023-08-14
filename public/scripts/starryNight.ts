@@ -62,6 +62,10 @@ export function initStarrySky() {
   shootingStar.x -= (canvasHeight * 0.5) / tan60;
   shootingStar.y += canvasHeight * 0.5;
 
+  // initial draw
+  draw();
+  moveHills();
+
   const contactElement = document.getElementById('contact');
   const observer = new IntersectionObserver(
     (entries, _observer) => {
@@ -81,14 +85,14 @@ export function initStarrySky() {
 }
 
 function startDrawing() {
-  intervalID = window.setInterval(loop, 1000 / 60);
+  intervalID = window.setInterval(draw, 1000 / 60);
 }
 
 function stopDrawing() {
   window.clearInterval(intervalID);
 }
 
-function loop() {
+function draw() {
   if (!context) return;
   context.clearRect(0, 0, canvasWidth, canvasHeight);
   context.fillStyle = '#ffffff';
@@ -142,6 +146,9 @@ function drawShootingStar() {
   let y1 = shootingStar.y - TAIL_LENGTH * sin60;
   let x2 = shootingStar.x + shootingStar.size * sin60;
   let y2 = shootingStar.y + shootingStar.size * cos60;
+
+  context.shadowColor = '#ffffff';
+  context.shadowBlur = 10;
 
   context.beginPath();
   context.moveTo(x0, y0);

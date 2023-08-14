@@ -106,7 +106,6 @@ img {
   -webkit-text-fill-color: transparent;
   animation: hue 4s infinite linear;
 }
-
 @keyframes hue {
   from {
     -webkit-filter: hue-rotate(0deg);
@@ -114,4 +113,11 @@ img {
   to {
     -webkit-filter: hue-rotate(-360deg);
   }
+}
+
+.observeL2R {
+  transition: all 750ms;
+}
+.observeR2L {
+  transition: all 750ms;
 }

@@ -77,7 +77,7 @@
   transition: all 750ms;
 }
 
-.headerImg > img:nth-child(n) {
+.headerImg > img:nth-child(n + 2) {
   transform: translate(100%, 0);
 }
 

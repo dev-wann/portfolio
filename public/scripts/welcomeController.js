@@ -189,21 +189,21 @@ function drawComet(speed, cx, cy) {
   a = atan2(py - y, px - x);
   a1 = a + pi / 2;
   a2 = a - pi / 2;
-  pr *= 1.1;
+  pr *= 1.025;
 
   context.shadowBlur = 40;
-
   context.beginPath();
   context.moveTo(px + pr * cos(a1), py + pr * sin(a1));
   context.lineTo(mouseX, mouseY);
   context.lineTo(px + pr * cos(a2), py + pr * sin(a2));
-  context.arc(px, py, pr, a2, a1);
   context.closePath();
   context.fill();
 
   // blur effect
   context.beginPath();
-  context.globalAlpha = 0.125;
+  context.globalAlpha = 0.25;
+  context.arc(px, py, pr + blurRad, 0, 2 * pi);
+  context.closePath();
   for (let i = 0; i < 8; i += 1) {
     let [dx, dy] = blurArr[i];
     dx *= blurRad;
@@ -211,7 +211,6 @@ function drawComet(speed, cx, cy) {
     context.moveTo(px + dx + pr * cos(a1), py + dy + pr * sin(a1));
     context.lineTo(mouseX + dx, mouseY + dy);
     context.lineTo(px + dx + pr * cos(a2), py + dy + pr * sin(a2));
-    context.arc(px + dx, py + dy, pr, a2, a1);
     context.closePath();
   }
   context.fill();

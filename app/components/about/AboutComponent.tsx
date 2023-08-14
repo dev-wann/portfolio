@@ -1,17 +1,15 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './about.module.css';
 import PopupComponent from './PopupComponent';
-import { highlight, initAboutObserver } from '@/public/scripts/aboutController';
 import { showPopup } from '@/public/scripts/popupController';
 
 export default function AboutComponent() {
   const imgType = useRef('defaultImg');
   const router = useRouter();
-  useEffect(initAboutObserver);
 
   function changeImg(type: string) {
     if (imgType.current === type) return;
@@ -23,12 +21,18 @@ export default function AboutComponent() {
     imgType.current = type;
   }
 
+  function highlight(id: string, on: boolean) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    target.style.webkitTextFillColor = on ? '' : 'white';
+  }
+
   function toResume() {
     router.push('/resume');
   }
 
   const header = (
-    <div className={styles.header}>
+    <div className={`${styles.header} observeR2L`}>
       <div className={styles.headerContentWrapper}>
         <div className={styles.headerContent}>
           <h2 style={{ marginBottom: '1vh' }}>Who am I?</h2>
@@ -59,7 +63,7 @@ export default function AboutComponent() {
 
   const career = (
     <div
-      className={styles.career}
+      className={`${styles.career} observeL2R`}
       onMouseEnter={() => {
         changeImg('careerImg');
         highlight('careerText', true);
@@ -123,7 +127,7 @@ export default function AboutComponent() {
 
   const skills = (
     <div
-      className={styles.skills}
+      className={`${styles.skills} observeR2L`}
       onMouseEnter={() => {
         highlight('skillsText', true);
       }}
@@ -156,7 +160,7 @@ export default function AboutComponent() {
 
   const edu = (
     <div
-      className={styles.edu}
+      className={`${styles.edu} observeR2L`}
       onMouseEnter={() => {
         changeImg('eduImg');
         highlight('eduText', true);
