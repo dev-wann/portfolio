@@ -6,8 +6,8 @@ const pi = Math.PI;
 const cos60 = Math.cos(pi / 3);
 const sin60 = Math.sin(pi / 3);
 const tan60 = Math.tan(pi / 3);
-const blurRad = 2;
-const blurInt = 0.2;
+const blurRad = 3;
+const blurInt = 0.5;
 
 let canvas: HTMLCanvasElement;
 let canvasWidth: number, canvasHeight: number;
@@ -96,8 +96,6 @@ function draw() {
   if (!context) return;
   context.clearRect(0, 0, canvasWidth, canvasHeight);
   context.fillStyle = '#ffffff';
-  context.shadowColor = '#ffffff';
-  context.shadowBlur = 8;
 
   drawStar();
   drawShootingStar();
@@ -119,17 +117,17 @@ function drawStar() {
   context.fill();
 
   // blur effect
-  context.globalAlpha = blurInt / blurRad;
-  for (let i = 0; i < STAR_NUM; i += 1) {
-    star = stars[i];
-    if (star.x <= 0) continue;
-    for (let dr = blurRad; dr > 0; dr -= 1) {
+  for (let dr = 1; dr <= blurRad; dr += 1) {
+    context.globalAlpha = (blurInt / blurRad) * (blurRad - dr);
+    for (let i = 0; i < STAR_NUM; i += 1) {
+      star = stars[i];
+      if (star.x <= 0) continue;
       context.moveTo(star.x, star.y);
       context.arc(star.x, star.y, star.size + dr, 0, 2 * pi);
       context.closePath();
     }
+    context.fill();
   }
-  context.fill();
   context.globalAlpha = 1;
 }
 
@@ -147,9 +145,6 @@ function drawShootingStar() {
   let x2 = shootingStar.x + shootingStar.size * sin60;
   let y2 = shootingStar.y + shootingStar.size * cos60;
 
-  context.shadowColor = '#ffffff';
-  context.shadowBlur = 10;
-
   context.beginPath();
   context.moveTo(x0, y0);
   context.lineTo(x1, y1);
@@ -163,6 +158,28 @@ function drawShootingStar() {
   );
   context.closePath();
   context.fill();
+
+  // blur effect
+  let blurRad = 6;
+  let size;
+  for (let dr = 1; dr <= blurRad; dr += 1) {
+    context.globalAlpha = (1 / (blurRad * blurRad)) * (blurRad - dr);
+    size = shootingStar.size + dr;
+    x0 = shootingStar.x - size * sin60;
+    y0 = shootingStar.y - size * cos60;
+    x1 = shootingStar.x + (TAIL_LENGTH + dr) * cos60;
+    y1 = shootingStar.y - (TAIL_LENGTH + dr) * sin60;
+    x2 = shootingStar.x + size * sin60;
+    y2 = shootingStar.y + size * cos60;
+    context.moveTo(x0, y0);
+    context.lineTo(x1, y1);
+    context.lineTo(x2, y2);
+    context.arc(shootingStar.x, shootingStar.y, size, -pi / 6, (5 / 6) * pi);
+    context.closePath();
+    context.fill();
+  }
+
+  context.globalAlpha = 1;
 }
 
 function resize(canvas: HTMLCanvasElement) {
