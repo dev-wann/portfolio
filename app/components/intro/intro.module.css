@@ -46,14 +46,14 @@
   text-align: center;
   height: 5em;
   margin-bottom: 0.5em;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 
 .description {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.2em;
   line-height: 140%;
 }
 

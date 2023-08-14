@@ -24,7 +24,7 @@ function observeTitle() {
     entries.forEach((entry) => {
       if (entry.target !== firstBackground) return;
       if (entry.isIntersecting) {
-        introTitle.style.fontSize = '4.5em';
+        introTitle.style.fontSize = '4em';
       } else {
         introTitle.style.fontSize = '10em';
       }

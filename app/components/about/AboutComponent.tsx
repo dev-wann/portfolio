@@ -37,12 +37,12 @@ export default function AboutComponent() {
         <div className={styles.headerContent}>
           <h2 style={{ marginBottom: '1vh' }}>Who am I?</h2>
           <div className={styles.headerTitle}>
-            <span className="colorful-text" style={{ fontSize: '1.7em' }}>
+            <span className="colorful-text" style={{ fontSize: '1.6em' }}>
               새로움
             </span>
             을 찾아 헤메는 개발자
             <br />
-            <span style={{ fontSize: '1.7em' }}>조승완</span>
+            <span style={{ fontSize: '1.6em' }}>조승완</span>
             입니다.
           </div>
           <p className={styles.headerDesc}>

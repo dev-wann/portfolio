@@ -11,7 +11,7 @@
   display: flex;
   align-items: stretch;
   width: 100vw;
-  height: max(35vh, 350px);
+  height: max(30vh, 300px);
 }
 
 .headerContentWrapper {
@@ -25,14 +25,15 @@
   justify-content: space-between;
   position: relative;
   width: calc(100% - 30px - 15vw);
-  min-width: 350px;
+  min-width: 300px;
   padding: 10px 30px 10px 15vw;
 }
 
 .headerContent > button {
   bottom: 0px;
   width: 100%;
-  padding: 3px;
+  padding: 2px;
+  margin: 2px;
   border: 2px solid white;
   background-color: black;
   border-radius: 10px;
@@ -56,7 +57,7 @@
   text-align: justify;
   word-break: keep-all;
   line-height: 160%;
-  font-size: max(0.95vw, 15px);
+  font-size: max(0.95vw, 1em);
   margin: 1vh 0;
 }
 
@@ -86,9 +87,9 @@
   grid-template-areas:
     'career  skills'
     'career  edu';
-  row-gap: 20px;
+  row-gap: 1vh;
   column-gap: 5vw;
-  padding: 4vh 15vw;
+  padding: 3vh 15vw;
 }
 
 .contents > div {
@@ -113,6 +114,7 @@
 }
 
 .contents > div > h1 {
+  font-size: 1.8em;
   text-decoration: underline;
   text-underline-position: under;
   margin-top: 0px;
@@ -189,7 +191,7 @@
 }
 
 .skillsContent > h3 {
-  margin: 10px 0;
+  margin: 10px 0 5px 0;
 }
 
 .skillsLogo {
