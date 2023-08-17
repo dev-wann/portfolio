@@ -1,9 +1,9 @@
 .popup {
   position: absolute;
-  width: 60vw;
-  height: 80vh;
-  left: 20vw;
-  top: 10vh;
+  width: 55vw;
+  height: 82vh;
+  left: 21vw;
+  top: 4vh;
   background-color: white;
   border: 1px solid lightgray;
   border-radius: 10px;
@@ -70,14 +70,22 @@
 .desc {
   flex: 1;
   margin: 10px;
-}
-
-.desc > div {
+  padding: 0 15px 10px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
   height: 100%;
-  max-height: calc(76vh - 22px);
+  max-height: calc(78vh - 22px);
   overflow: auto;
+}
+
+.desc h3 {
+  margin: 0.5em 0;
+}
+
+.desc p {
+  margin: 0.5em 0;
+  text-indent: 2em;
+  word-break: keep-all;
 }
