@@ -18,24 +18,24 @@ import {
 export default function ProjectComponent() {
   const page = useRef(0);
   const isAnimating = useRef(false);
+  const threshold = useRef(null);
   useEffect(() => {
     organizeFolder();
     setInterval(() => {
       induceFlip(page.current);
     }, 4000);
-    const contactComponent = document.getElementById('contact');
     const observer = new IntersectionObserver(
-      (entries, _observer) => {
-        if (!entries.at(0)?.isIntersecting) return;
+      (entries) => {
+        if (entries.at(0)?.isIntersecting) return;
         if (page.current > 0) {
           page.current = 0;
           initFlip();
           isAnimating.current = true;
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.75 }
     );
-    if (contactComponent) observer.observe(contactComponent);
+    if (threshold.current) observer.observe(threshold.current);
   });
 
   const leftClick = (
@@ -107,7 +107,7 @@ export default function ProjectComponent() {
         <div className={`${styles.contents} observeR2L`}>
           <div className={styles.instruction}>{leftClick}</div>
           <div className={styles.folderWrapper}>
-            <div className={styles.folder} id="folder">
+            <div className={styles.folder} id="folder" ref={threshold}>
               <div
                 className={`${styles.frontCover} ${[
                   page.current === 0 ? styles.induceFlip : '',
