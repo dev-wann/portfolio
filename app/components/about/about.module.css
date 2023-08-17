@@ -5,13 +5,14 @@
 .stickyWrapper {
   position: sticky;
   top: 5vh;
+  height: 90vh;
 }
 
 .header {
   display: flex;
   align-items: stretch;
   width: 100vw;
-  height: max(30vh, 300px);
+  height: max(30vh, 320px);
 }
 
 .headerContentWrapper {
@@ -25,7 +26,7 @@
   justify-content: space-between;
   position: relative;
   width: calc(100% - 30px - 15vw);
-  min-width: 300px;
+  min-width: 325px;
   padding: 10px 30px 10px 15vw;
 }
 

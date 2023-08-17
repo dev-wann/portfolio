@@ -186,13 +186,21 @@ export default function AboutComponent() {
 
   return (
     <div className={styles.aboutWrapper} id="about">
-      <div className={styles.stickyWrapper}>
+      <div
+        className={styles.stickyWrapper}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         {header}
-        <div className={styles.contents}>
+        <div style={{ flexGrow: 2 }} />
+        <div className={styles.contents} style={{ flexGrow: 1 }}>
           {career}
           {skills}
           {edu}
         </div>
+        <div style={{ flexGrow: 3 }} />
         <PopupComponent />
       </div>
       <div className={styles.bottomPlaceHolder}></div>

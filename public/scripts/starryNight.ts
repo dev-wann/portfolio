@@ -216,12 +216,13 @@ function moveHills() {
   const hillNum = hills.length;
   if (hillNum === 0) return;
 
+  const scale = 1.3;
+  const diff = 0.9;
+
   let scrollRatio =
     (document.body.scrollHeight - window.scrollY) / window.innerHeight - 1;
-  scrollRatio = Math.min(scrollRatio, 0.4);
+  scrollRatio = Math.min(scrollRatio, 0.5);
 
-  const scale = 1.5;
-  const diff = 0.8;
   let hill: HTMLElement;
   let bottom;
   for (let i = 0; i < hillNum; i += 1) {
