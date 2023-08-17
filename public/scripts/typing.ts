@@ -1,3 +1,9 @@
+enum Status {
+  NORMAL,
+  START,
+  CLEAR,
+}
+
 export default class Typing {
   constructor(
     element: HTMLElement | null,
@@ -21,6 +27,7 @@ export default class Typing {
       options.showCursor === undefined ? true : options.showCursor;
     this.removeCursorAtFinish = options.removeCursorAtFinish || false;
     this.curIdx = 0;
+    this.status = Status.NORMAL;
   }
 
   element: HTMLSpanElement | null;
@@ -33,13 +40,16 @@ export default class Typing {
   removeCursorAtFinish: boolean;
   curIdx: number;
   timeoutID?: number;
+  status: number;
 
   async start() {
+    this.status = Status.START;
     // preDelay
     await this.wait(this.preDelay);
     // write
     if (this.showCursor) this.addCursor('typing-cursor');
     while (this.curIdx < this.str.length) {
+      if (this.status === Status.CLEAR) break;
       await this.write();
     }
     if (this.showCursor) {
@@ -50,13 +60,16 @@ export default class Typing {
     await this.wait(this.postDelay);
     if (this.removeCursorAtFinish) this.removeCursor();
 
+    this.status = Status.NORMAL;
     return new Promise((res) => res(''));
   }
 
   async clear() {
+    this.status = Status.CLEAR;
     clearTimeout(this.timeoutID);
     if (this.showCursor) this.addCursor('typing-cursor');
     while (this.curIdx > 0) {
+      if (this.status === Status.START) break;
       await this.backspace();
     }
     if (this.showCursor) {
@@ -64,6 +77,7 @@ export default class Typing {
       this.addCursor('waiting-cursor');
     }
     if (this.removeCursorAtFinish) this.removeCursor();
+    this.status = Status.NORMAL;
   }
 
   async restart() {
