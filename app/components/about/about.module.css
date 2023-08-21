@@ -50,7 +50,7 @@
 }
 
 .headerTitle {
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: bold;
 }
 
@@ -58,7 +58,7 @@
   text-align: justify;
   word-break: keep-all;
   line-height: 160%;
-  font-size: max(0.95vw, 1em);
+  font-size: 1.1em;
   margin: 1vh 0;
 }
 
@@ -115,7 +115,6 @@
 }
 
 .contents > div > h1 {
-  font-size: 1.8em;
   text-decoration: underline;
   text-underline-position: under;
   margin-top: 0px;
@@ -127,6 +126,13 @@
 
 .contents > div:hover > h1 {
   color: #80ecd9;
+}
+
+.contents p {
+  font-size: 1.05em;
+}
+.contents li {
+  font-size: 1.05em;
 }
 
 .career {
@@ -154,7 +160,7 @@
 
 .info {
   grid-area: info;
-  font-size: 14px;
+  font-size: 0.95em !important;
   text-align: right;
   margin: 0;
   white-space: nowrap;

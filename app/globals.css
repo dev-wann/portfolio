@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,6 +8,12 @@ body {
   margin: 0px;
   background-color: black;
   color: white;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, Bazier Square,
+    Noto Sans KR, Segoe UI, Apple SD Gothic Neo, Roboto, Helvetica Neue, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
   overflow-x: hidden;
   -ms-overflow-style: none;
 }

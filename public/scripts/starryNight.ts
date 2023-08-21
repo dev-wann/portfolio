@@ -221,7 +221,7 @@ function moveHills() {
 
   let scrollRatio =
     (document.body.scrollHeight - window.scrollY) / window.innerHeight - 1;
-  scrollRatio = Math.min(scrollRatio, 0.5);
+  scrollRatio = Math.min(scrollRatio, 0.4);
 
   let hill: HTMLElement;
   let bottom;

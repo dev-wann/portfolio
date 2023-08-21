@@ -46,8 +46,8 @@ export default function AboutComponent() {
             입니다.
           </div>
           <p className={styles.headerDesc}>
-            <span>새롭고 도전적인</span> 서비스와 더 나은 <span>UX 개발</span>에
-            목마른 <span>Frontend</span> 개발자입니다.
+            <span>새롭고 도전적인</span> 서비스와 더 나은{' '}
+            <span>UX/UI 개발</span>에 목마른 <span>Frontend</span> 개발자입니다.
           </p>
           <button onClick={toResume}>Resume</button>
           <button onClick={showPopup}>TMI about me</button>
