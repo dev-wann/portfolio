@@ -15,13 +15,15 @@ import {
   organizeFolder,
 } from '@/public/scripts/projectController';
 
+let intervalID: number;
+
 export default function ProjectComponent() {
   const page = useRef(0);
   const isAnimating = useRef(false);
   const threshold = useRef(null);
   useEffect(() => {
     organizeFolder();
-    setInterval(() => {
+    intervalID = window.setInterval(() => {
       induceFlip(page.current);
     }, 4000);
     const observer = new IntersectionObserver(
@@ -36,6 +38,9 @@ export default function ProjectComponent() {
       { threshold: 0.75 }
     );
     if (threshold.current) observer.observe(threshold.current);
+    return () => {
+      clearInterval(intervalID);
+    };
   });
 
   const leftClick = (
