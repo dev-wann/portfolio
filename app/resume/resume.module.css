@@ -1,0 +1,148 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: 3rem;
+  background-color: #010c30;
+  color: white;
+  z-index: 99;
+}
+
+.navigation > button {
+  width: 100px;
+  margin: 0 25px;
+  padding: 2px;
+  border: 2px solid white;
+  background-color: #010c30;
+  border-radius: 8px;
+  font-size: larger;
+  color: white;
+  transition: 300ms;
+}
+.navigation > button:hover {
+  background-color: white;
+  color: #010c30;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media print {
+  .navigation {
+    display: none;
+  }
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 19cm; /* a4 width without 1cm page margin */
+  margin: auto;
+}
+
+.content {
+  margin-bottom: 1.65rem;
+}
+.content hr {
+  border: 1px solid #e3e8eb;
+}
+
+.title {
+  border-left: 8px solid #0c1660;
+  padding-left: 12px;
+  margin-bottom: 0.4em;
+  font-size: 1.6em;
+}
+
+.info {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+}
+.info h2 {
+  margin: 0 0 10px 0;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.info p {
+  font-size: 1.05em;
+  margin: 0 0 4px 0;
+}
+.info a {
+  color: black;
+  text-decoration: none;
+}
+
+.desc {
+  margin-left: 1rem;
+}
+
+.row {
+  display: flex;
+  margin: 1rem 0;
+}
+.row p {
+  margin: 0;
+  word-break: keep-all;
+}
+.row h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.35em;
+}
+.row h3 {
+  margin: 0.5rem 0;
+}
+
+.row_left {
+  flex-basis: 14rem;
+  flex-shrink: 0;
+  padding-right: 1rem;
+}
+.row_left p {
+  font-size: 0.95em;
+}
+
+.row_right {
+  flex-grow: 1;
+}
+.row_right p {
+  margin: 0 0 0.2rem 0;
+  word-break: keep-all;
+}
+.row_right ul {
+  margin: 0 0 0 1.25rem;
+  padding: 0;
+}
+.row_right li {
+  padding-bottom: 0.2rem;
+  word-break: keep-all;
+}
+
+.desc_other {
+  margin-left: 1rem;
+}
+.desc_other h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.35em;
+}
+.desc_other h3 {
+  margin: 0.5rem 0;
+}
+.desc_other p {
+  margin: 0 0 0.2rem 0;
+  word-break: keep-all;
+}
+.desc_other a {
+  text-decoration: none;
+  color: black;
+}
+.desc_other ul {
+  margin: 0 0 0 1.25rem;
+  padding: 0;
+}
+.desc_other li {
+  padding-bottom: 0.2rem;
+  word-break: keep-all;
+}
