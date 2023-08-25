@@ -133,7 +133,7 @@ export default function Resume() {
         <div className={styles.desc_other}>
           <h2>Portfolio Page</h2>
           <Link href={'/'} style={{ display: 'block' }}>
-            https://xxxx.xxxx.xxx
+            https://portfolio-dev-wann.vercel.app/
           </Link>
           <span>2023.07 ~ 2023.08</span>
           <h3>Description</h3>

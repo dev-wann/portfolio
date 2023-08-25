@@ -211,7 +211,7 @@ export default function AboutComponent() {
 const images = {
   default: (
     <Image
-      src="/img/about/default.jpg "
+      src="/img/about/default.jpg"
       alt="Picture of myself"
       fill={true}
       style={{ objectFit: 'cover' }}
@@ -220,7 +220,7 @@ const images = {
   ),
   career: (
     <Image
-      src="/img/about/career.jpg "
+      src="/img/about/career.jpg"
       alt="Picture of myself"
       fill={true}
       style={{ objectFit: 'cover' }}
@@ -229,7 +229,7 @@ const images = {
   ),
   edu: (
     <Image
-      src="/img/about/education.jpg "
+      src="/img/about/education.jpg"
       alt="Picture of myself"
       fill={true}
       style={{ objectFit: 'cover' }}
