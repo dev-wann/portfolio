@@ -118,7 +118,7 @@ function observeDescriptionText(typeTitleSub: Typing) {
   };
 
   const observer = new IntersectionObserver(changeText, {
-    threshold: 0.5,
+    threshold: 0.6,
   });
   observer.observe(scrollThrs);
 }
