@@ -1,11 +1,11 @@
 'use client';
 
 import styles from './resume.module.css';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export default function Resume() {
+  const navCoverRef = useRef(null);
   useEffect(() => {
     document.body.style.backgroundColor = 'white';
     document.body.style.color = 'black';
@@ -14,12 +14,46 @@ export default function Resume() {
       document.body.style.color = 'white';
     };
   });
-  const router = useRouter();
+
+  const showNav = (flag: boolean) => {
+    let elem = navCoverRef.current as unknown as HTMLElement;
+    if (elem && flag) {
+      elem.style.opacity = '0';
+      elem.style.zIndex = '-1';
+    } else if (elem) {
+      elem.style.opacity = '1';
+      elem.style.zIndex = '1';
+    }
+  };
+
+  const scrollElem = document.scrollingElement;
+  if (scrollElem) {
+    window.addEventListener('scroll', () => {
+      let scrollTop = scrollElem.scrollTop;
+      showNav(scrollTop <= 30);
+    });
+  }
+
   const navigation = (
-    <div className={styles.navigation}>
-      <button onClick={() => router.back()}>Go Back</button>
+    <div
+      className={styles.navigation}
+      onMouseOver={() => showNav(true)}
+      onMouseLeave={() => {
+        if (scrollElem && scrollElem.scrollTop > 30) showNav(false);
+      }}
+    >
+      <Link href="/home#about">
+        <button>Go Back</button>
+      </Link>
       <h1>Resume</h1>
-      <button>Print</button>
+      <button
+        onClick={() => {
+          if (window) window.print();
+        }}
+      >
+        Print
+      </button>
+      <div className={styles.navCover} ref={navCoverRef}></div>
     </div>
   );
 
@@ -209,7 +243,7 @@ export default function Resume() {
   );
 
   return (
-    <div>
+    <div className={styles.wrapper} id="wrapper">
       {navigation}
       {contents}
     </div>
