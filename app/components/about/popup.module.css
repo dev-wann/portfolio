@@ -17,6 +17,10 @@
   font-size: 1.1em;
 }
 
+.popup::-webkit-scrollbar {
+  display: block;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -78,7 +82,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   height: 100%;
-  max-height: calc(78vh - 22px);
+  max-height: calc(78vh - 25px);
   overflow: auto;
 }
 

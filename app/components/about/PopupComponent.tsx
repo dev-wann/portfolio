@@ -119,7 +119,7 @@ export default function PopupComponent() {
               </span>
             </p>
           </div>
-          <p style={{ textIndent: '0' }}>2023.08.15</p>
+          <p style={{ textIndent: '0', marginBottom: '0' }}>2023.08.15</p>
         </div>
       </div>
     </div>
