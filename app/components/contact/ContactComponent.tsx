@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './contact.module.css';
 import Link from 'next/link';
 import StarryNightComponent from './StarryNightComponent';
+import ReturnBtnComponent from './ReturnBtnComponent';
 export default function ContactComponent() {
   return (
     <>
@@ -28,6 +29,7 @@ export default function ContactComponent() {
             <Link href="https://dev-wann.tistory.com"></Link>
           </div>
         </div>
+        <ReturnBtnComponent />
         <div className={styles.footer} id="footer"></div>
       </div>
     </>
