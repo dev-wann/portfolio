@@ -6,12 +6,25 @@ import Link from 'next/link';
 
 export default function Resume() {
   const navCoverRef = useRef(null);
+  const scrollElem = useRef<Element | null>(null);
   useEffect(() => {
-    document.body.style.backgroundColor = 'white';
-    document.body.style.color = 'black';
+    if (typeof document !== undefined) {
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+    }
+    scrollElem.current = document.scrollingElement;
+    window.addEventListener('scroll', () => {
+      if (scrollElem.current) {
+        let scrollTop = scrollElem.current.scrollTop;
+        showNav(scrollTop <= 30);
+      }
+    });
+
     return () => {
-      document.body.style.backgroundColor = 'black';
-      document.body.style.color = 'white';
+      if (typeof document !== undefined) {
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
+      }
     };
   });
 
@@ -26,20 +39,13 @@ export default function Resume() {
     }
   };
 
-  const scrollElem = document.scrollingElement;
-  if (scrollElem) {
-    window.addEventListener('scroll', () => {
-      let scrollTop = scrollElem.scrollTop;
-      showNav(scrollTop <= 30);
-    });
-  }
-
   const navigation = (
     <div
       className={styles.navigation}
       onMouseOver={() => showNav(true)}
       onMouseLeave={() => {
-        if (scrollElem && scrollElem.scrollTop > 30) showNav(false);
+        if (scrollElem.current && scrollElem.current.scrollTop > 30)
+          showNav(false);
       }}
     >
       <Link href="/home#about">

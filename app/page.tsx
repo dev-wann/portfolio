@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import Script from 'next/script';
 import {
   initWelcomeCanvas,
   startWelcomeCanvas,
@@ -124,7 +123,6 @@ export default function Welcome() {
         <p ref={desc2Ref} style={{ fontSize: '1.8em' }}></p>
       </div>
       <canvas id="canvas_welcome"></canvas>
-      <Script src="/scripts/canvas_welcome.js" type="module"></Script>
     </div>
   );
 }
