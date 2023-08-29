@@ -45,23 +45,21 @@
 .instText > p {
   margin: 0;
   text-align: center;
+  font-size: max(1vw, 16px);
 }
 
-.instText > p:nth-child(1) {
-  font-size: max(1vw, 16px);
+.instText > p:first-child {
+  font-weight: bold;
+  margin-bottom: 2px;
 }
-.instText > p:nth-child(2) {
-  font-size: max(1vw, 16px);
-}
-.instText > p:nth-child(3) {
-  font-size: max(1vw, 16px);
-}
-.instText > p:nth-child(4) {
-  font-size: max(1vw, 16px);
+.instText > p:last-child {
+  font-weight: bold;
+  margin-top: 2px;
 }
 
 .folderWrapper {
   position: relative;
+  margin-right: 5px;
   width: 55vw;
   height: calc(80vh - 40px);
 }

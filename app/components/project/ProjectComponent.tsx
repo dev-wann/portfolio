@@ -47,7 +47,7 @@ export default function ProjectComponent() {
     <div className={styles.instItem}>
       <div className={styles.instImg}>{images.leftClick}</div>
       <div className={styles.instText}>
-        <p>Click left</p>
+        <p>Left Click</p>
         <p>to turn</p>
         <p>the page</p>
         <p>Forward</p>
@@ -59,7 +59,7 @@ export default function ProjectComponent() {
     <div className={styles.instItem}>
       <div className={styles.instImg}>{images.rightClick}</div>
       <div className={styles.instText}>
-        <p>Click right</p>
+        <p style={{ letterSpacing: '-0.1px' }}>Right Click</p>
         <p>to turn</p>
         <p>the page</p>
         <p>Backward</p>
