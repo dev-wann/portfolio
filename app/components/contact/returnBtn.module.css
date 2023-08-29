@@ -24,6 +24,7 @@
 .returnBtn:hover {
   border-color: lightgray;
   color: lightgray;
+  cursor: pointer;
 }
 
 .returnBtn:hover:before {
