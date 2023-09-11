@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './returnBtn.module.css';
 
 export default function ReturnBtnComponent() {
+  const btnRef = useRef(null);
   const progRef = useRef(null);
   const [progress, setProgress] = useState(0);
   useEffect(() => {
@@ -15,13 +16,22 @@ export default function ReturnBtnComponent() {
       (progress * 100) / 3
     )}%`;
   });
-  const handleClick = () => {
+  const handleMouseDown = () => {
     if (!progRef.current) scrollTo(0, 0);
+    let btn = btnRef.current as unknown as HTMLElement;
+    if (btn) {
+      btn.classList.add(styles.animate);
+      setTimeout(() => btn.classList.remove(styles.animate), 300);
+    }
     setProgress(progress + 1);
   };
 
   return (
-    <button className={styles.returnBtn} onClick={handleClick}>
+    <button
+      className={styles.returnBtn}
+      ref={btnRef}
+      onMouseDown={handleMouseDown}
+    >
       <span>Return to Top</span>
       <div className={styles.progress} ref={progRef}></div>
     </button>

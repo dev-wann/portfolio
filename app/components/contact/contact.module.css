@@ -38,6 +38,7 @@
 .title {
   font-size: max(56px, 3.5vw);
   font-weight: bold;
+  margin-top: 0.7em;
 }
 
 .icon {

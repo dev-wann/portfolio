@@ -42,6 +42,22 @@
   box-shadow: 0 0 10px 5px rgb(255, 255, 255, 0.4);
 }
 
+.returnBtn.animate {
+  animation: bounce 300ms linear;
+}
+
+@keyframes bounce {
+  from {
+    transfrom: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .returnBtn span {
   font-size: 1.4rem;
   font-weight: bold;
