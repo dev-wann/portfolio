@@ -41,11 +41,9 @@ export default function SuperOffice({ page }: { page: number }) {
           프로젝트에 참여
         </li>
         <li>
-          <span className={styles.highlight}>
-            React, MobX, TypeScript, CSS in JS
-          </span>
-          를 사용한 Front-end 개발,{' '}
-          <span className={styles.highlight}>Jest</span>를 이용한 테스트 작성 및{' '}
+          <span className={styles.highlight}>React, MobX, TypeScript</span>를
+          사용한 Front-end 개발, <span className={styles.highlight}>Jest</span>
+          를 이용한 테스트 작성 및{' '}
           <span className={styles.highlight}>GitLab</span>을 통한 협업 경험
         </li>
       </ul>
