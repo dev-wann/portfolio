@@ -12,7 +12,7 @@ const blurInt = 0.5;
 let canvas: HTMLCanvasElement;
 let canvasWidth: number, canvasHeight: number;
 let context: CanvasRenderingContext2D | null;
-let intervalID: number;
+let animationID: number;
 
 const stars: Star[] = [];
 let shootingStar: ShootingStar;
@@ -85,11 +85,14 @@ export function initStarrySky() {
 }
 
 function startDrawing() {
-  intervalID = window.setInterval(draw, 1000 / 60);
+  (function loop() {
+    draw();
+    animationID = requestAnimationFrame(loop);
+  })();
 }
 
 function stopDrawing() {
-  window.clearInterval(intervalID);
+  window.cancelAnimationFrame(animationID);
 }
 
 function draw() {

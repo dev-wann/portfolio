@@ -38,7 +38,7 @@ let speed = DEFAULT_SPEED;
 let targetSpeed = DEFAULT_SPEED;
 let startTime = undefined;
 let blackoutProgress = 2;
-let intervalID;
+let animationID;
 
 class Particle {
   constructor() {
@@ -129,11 +129,14 @@ export function initWelcomeCanvas() {
 }
 
 export function startWelcomeCanvas() {
-  intervalID = setInterval(loop, 1000 / 60);
+  (function loop() {
+    draw();
+    animationID = requestAnimationFrame(loop);
+  })();
 }
 
 export function stopWelcomeCanvas() {
-  if (intervalID) clearInterval(intervalID);
+  if (animationID) cancelAnimationFrame(animationID);
 }
 
 function resize(canvas) {
@@ -145,7 +148,7 @@ function resize(canvas) {
   context.fillStyle = 'rgb(255, 255, 255)';
 }
 
-function loop() {
+function draw() {
   speed += (targetSpeed - speed) * 0.05;
   let cx = centerX - (mouseX - centerX) * 1.25;
   let cy = centerY - (mouseY - centerY) * 1.25;
