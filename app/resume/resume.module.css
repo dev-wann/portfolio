@@ -53,6 +53,9 @@
 }
 
 @media print {
+  @page {
+    margin: 25px auto 20px;
+  }
   .navigation {
     display: none;
   }

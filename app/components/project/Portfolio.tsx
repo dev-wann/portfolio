@@ -28,8 +28,9 @@ export default function Portfolio({ page }: { page: number }) {
           입니다.
         </li>
         <li>
-          <span className={styles.highlight}>Next.js, TypeScript, CSS</span>를
-          이용하여 개발되었습니다.
+          <span className={styles.highlight}>Next.js</span>와 &nbsp;
+          <span className={styles.highlight}>TypeScript</span>를 이용하여
+          개발되었습니다.
         </li>
         <li>
           두 가지의 목적을 가지고 제작되었습니다.
@@ -42,9 +43,14 @@ export default function Portfolio({ page }: { page: number }) {
               <span className={styles.highlight}>
                 마우스를 통한 다양한 사용자 인터랙션
               </span>
-              구현
+              &nbsp;구현
             </li>
           </ul>
+        </li>
+        <li>
+          페이지 내 복잡한 애니메이션은{' '}
+          <span className={styles.highlight}>canvas</span>를 이용하여
+          구현하였습니다.
         </li>
         <li>
           개인 블로그에 간단한 작업기를 남겨두었습니다.{' '}
@@ -57,13 +63,6 @@ export default function Portfolio({ page }: { page: number }) {
           >
             (Link)
           </Link>
-        </li>
-        <li>
-          p.s.{' '}
-          <span className={styles.highlight}>
-            &lt;canvas&gt;를 활용한 그래픽 작업
-          </span>
-          은 우연히 시작했으나 이 프로젝트에서 가장 재미있었습니다.
         </li>
       </ul>
     </div>

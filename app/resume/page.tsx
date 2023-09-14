@@ -66,7 +66,7 @@ export default function Resume() {
   const contents = (
     <div className={styles.contentWrapper}>
       <div className={styles.content}>
-        <h1 style={{ fontSize: '2.25em', margin: '1.5rem 0 1rem 0' }}>
+        <h1 style={{ fontSize: '2.25em' }}>
           <span style={{ fontSize: '0.9em' }}>Frontend Developer</span>
           <br />
           조승완입니다.
@@ -125,6 +125,7 @@ export default function Resume() {
                 </li>
                 <li>문서 정보 관리 모델 및 다양한 UI 기능 설계, 개발</li>
                 <li>실시간 다중 사용자 편집 기능 구현</li>
+                <li>JS 로직 및 MobX 최적화를 통한 성능 개선</li>
                 <li>
                   Blink(Chromium rendering engine)에 문서 pagination을 위한
                   custom layout algorithm 개발
@@ -137,7 +138,7 @@ export default function Resume() {
           <hr />
           <div className={styles.row}>
             <div className={styles.row_left}>
-              <h2>TmaxOS</h2>
+              <h2>TmaxA&C</h2>
               <p>2019.08 ~ 2020.07</p>
               <p>연구원 / PK본부</p>
             </div>
@@ -180,7 +181,7 @@ export default function Resume() {
           <p>Next.js framework를 사용해 제작한 포트폴리오 페이지입니다.</p>
           <p>심플하면서도 다양한 사용자 인터랙션을 구현하고자 하였습니다.</p>
           <h3>Tech Stack</h3>
-          <p>Next.js, TypeScript, CSS</p>
+          <p>Next.js, TypeScript</p>
         </div>
       </div>
       <div className={styles.content}>

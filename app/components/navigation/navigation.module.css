@@ -27,9 +27,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80vw;
+  width: min(80vw, 1200px);
   height: 100%;
-  padding: 0 10vw;
+  margin: auto;
 }
 
 .itemWrapper {

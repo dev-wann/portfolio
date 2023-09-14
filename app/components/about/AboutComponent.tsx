@@ -103,7 +103,7 @@ export default function AboutComponent() {
         </div>
       </div>
       <div className={styles.careerContent} style={{ marginTop: '20px' }}>
-        <h2 className={styles.company}>TmaxOS</h2>
+        <h2 className={styles.company}>TmaxA&C</h2>
         <p className={styles.info}>
           연구원 / PK본부
           <br />
@@ -185,26 +185,29 @@ export default function AboutComponent() {
   );
 
   return (
-    <div className={styles.aboutWrapper} id="about">
-      <div
-        className={styles.stickyWrapper}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        {header}
-        <div style={{ flexGrow: 2 }} />
-        <div className={styles.contents} style={{ flexGrow: 1 }}>
-          {career}
-          {skills}
-          {edu}
+    <>
+      <div className={styles.aboutWrapper} id="about">
+        <div
+          className={styles.stickyWrapper}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          {header}
+          <div style={{ flexGrow: 1 }} />
+          <div className={styles.contents} style={{ flexGrow: 1 }}>
+            {career}
+            {skills}
+            {edu}
+          </div>
+          <div style={{ flexGrow: 3 }} />
+          <PopupComponent />
         </div>
-        <div style={{ flexGrow: 3 }} />
-        <PopupComponent />
+        <div className={styles.bottomPlaceHolder}></div>
       </div>
-      <div className={styles.bottomPlaceHolder}></div>
-    </div>
+      <div style={{ height: '40px' }} />
+    </>
   );
 }
 

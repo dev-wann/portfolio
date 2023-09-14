@@ -11,7 +11,7 @@ export default function Navigation() {
         <Link
           href="/"
           className={`${styles.item} ${styles.toWelcome}`}
-          style={{ ...font.style, fontSize: '2em' }}
+          style={{ ...font.style, fontSize: '2em', marginLeft: 0 }}
         >
           Welcome
         </Link>

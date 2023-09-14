@@ -2,7 +2,7 @@
   position: relative;
   box-sizing: border-box;
   width: 100vw;
-  padding: 10px 15vw;
+  padding: 10px;
   z-index: 1;
 }
 
@@ -14,12 +14,16 @@
 .title {
   display: flex;
   align-items: center;
-  /* height: 10vh; */
+  width: min(80vw, 1200px);
+  margin: auto;
 }
 
 .contents {
   display: flex;
   margin-top: 3vh;
+  width: min(80vw, 1200px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .instruction {
@@ -171,7 +175,7 @@
   background-color: white;
   padding: 1vh 2vw;
   border-radius: 10px;
-  font-size: 3vw;
+  font-size: 2.8rem;
   font-weight: bold;
 }
 
@@ -229,7 +233,7 @@
   word-break: keep-all;
   display: flex;
   flex-direction: column;
-  font-size: 1.1em;
+  font-size: 1.08em;
 }
 
 .item > * {
@@ -241,6 +245,7 @@
 .item ul {
   box-sizing: border-box;
   flex-grow: 1;
+  max-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

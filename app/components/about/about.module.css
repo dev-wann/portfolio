@@ -1,5 +1,6 @@
 .aboutWrapper {
-  width: 100vw;
+  width: min(80vw, 1200px);
+  margin: auto;
 }
 
 .stickyWrapper {
@@ -11,12 +12,12 @@
 .header {
   display: flex;
   align-items: stretch;
-  width: 100vw;
-  height: max(30vh, 320px);
+  width: calc(50vw + min(80vw, 1200px) / 2);
+  height: max(32vh, 320px);
 }
 
 .headerContentWrapper {
-  flex: 2;
+  flex: 3;
   display: flex;
 }
 
@@ -25,9 +26,9 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  width: calc(100% - 30px - 15vw);
+  width: calc(100% - 30px);
   min-width: 325px;
-  padding: 10px 30px 10px 15vw;
+  padding: 10px 30px 10px 0;
 }
 
 .headerContent > button {
@@ -72,7 +73,7 @@
 }
 
 .headerImg {
-  flex: 3;
+  flex: 7;
   position: relative;
 }
 
@@ -90,8 +91,8 @@
     'career  skills'
     'career  edu';
   row-gap: 1vh;
-  column-gap: 5vw;
-  padding: 3vh 15vw;
+  column-gap: 8vw;
+  padding: 3vh 0;
 }
 
 .contents > div {

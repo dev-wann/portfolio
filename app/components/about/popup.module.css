@@ -2,7 +2,7 @@
   position: absolute;
   width: 55vw;
   height: 82vh;
-  left: 21vw;
+  left: calc((100% - 55vw) / 2);
   top: 4vh;
   background-color: white;
   border: 1px solid lightgray;
