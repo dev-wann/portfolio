@@ -116,19 +116,20 @@ export default function Resume() {
                 및 브라우저 환경 지원, 다양한 확장자의 문서 호환 기능을
                 제공합니다.
               </p>
-              <p>서울시교육청 및 대한민국육군본부에 도입되었습니다.</p>
-              <h3>Responsibility</h3>
+              <p>서울시교육청 및 대한민국 육군본부에 도입되었습니다.</p>
+              <h3>Responsibilities</h3>
               <ul>
                 <li>
                   SuperWord(Word processor) 및 SuperPoint(Presentation) 앱의 표
                   공통 기능 개발 담당
                 </li>
-                <li>문서 정보 관리 모델 및 다양한 UI 기능 설계, 개발</li>
-                <li>실시간 다중 사용자 편집 기능 구현</li>
-                <li>JS 로직 및 MobX 최적화를 통한 성능 개선</li>
                 <li>
-                  Blink(Chromium rendering engine)에 문서 pagination을 위한
-                  custom layout algorithm 개발
+                  문서 정보 관리 모델 및 20개 이상의 문서 편집 UI 기능 개발
+                </li>
+                <li>실시간 다중 사용자 편집 기능 개발</li>
+                <li>JS 로직 및 MobX 최적화를 통한 렌더링 성능 개선 (~70%)</li>
+                <li>
+                  문서 pagination을 위한 Blink custom layout algorithm 개발
                 </li>
               </ul>
               <h3>Tech Stack</h3>
@@ -151,17 +152,24 @@ export default function Resume() {
                 확장자의 문서 호환을 제공합니다.
               </p>
               <p>특허청 및 한국교육학술정보원에 도입되었습니다.</p>
-              <h3>Responsibility</h3>
+              <h3>Responsibilities</h3>
               <ul>
                 <li>
                   ToWord(Word processor), ToPoint(Presentation)의 표 기능 및
                   ToCell(spreadsheet)의 표 서식 기능 개발 담당
                 </li>
-                <li>Document layout algorithm 및 다양한 UI 기능 설계, 개발</li>
                 <li>
-                  Layout algorithm 로직 개선을 통한 프로그램 성능 개선 진행
+                  Document layout algorithm 및 10개 이상의 문서 편집 UI 기능
+                  개발
                 </li>
-                <li>Legacy code refactoring 진행</li>
+                <li>
+                  Layout algorithm 로직 개선을 통한 프로그램 성능 개선 (~30%)
+                </li>
+                <li>
+                  다양한 문서 확장자의 parser / writer 구현 (doc, docx, doch,
+                  hwp)
+                </li>
+                <li>Legacy code refactoring</li>
               </ul>
               <h3>Tech Stack</h3>
               <p>C++</p>
@@ -173,13 +181,16 @@ export default function Resume() {
         <h1 className={styles.title}>Other Experience</h1>
         <div className={styles.desc_other}>
           <h2>Portfolio Page</h2>
-          <Link href={'/'} style={{ display: 'block' }}>
-            https://portfolio-dev-wann.vercel.app/
+          <Link href={'/'}>
+            <p>https://portfolio-dev-wann.vercel.app/</p>
           </Link>
-          <span>2023.07 ~ 2023.08</span>
+          <p>2023.07 ~ 2023.08</p>
           <h3>Description</h3>
-          <p>Next.js framework를 사용해 제작한 포트폴리오 페이지입니다.</p>
-          <p>심플하면서도 다양한 사용자 인터랙션을 구현하고자 하였습니다.</p>
+          <p>
+            Next.js framework 및 TypeScript를 사용해 제작한 포트폴리오 페이지
+          </p>
+          <p>심플하면서도 다양한 사용자 인터랙션을 구현하고자 함</p>
+          <p>canvas를 이용한 애니메이션 구현</p>
           <h3>Tech Stack</h3>
           <p>Next.js, TypeScript</p>
         </div>
@@ -192,11 +203,10 @@ export default function Resume() {
             프론트엔드는 사용자 경험에 가장 큰 영향을 주는 파트라고 생각합니다.
             <br />
             그만큼 사용자를 효과적으로 끌어들일 수 있으면서도 가장 먼저 불편함을
-            초래하고 떠나가게도 할 수 있습니다.
+            초래해 떠나가게도 할 수 있습니다.
             <br />
-            그렇기 때문에 기능 개발을 할 때 항상 이 기능을 사용자가 논리적으로
-            납득할 수 있을지 고민하고, 좋은 사용성을 제공할 수 있도록
-            노력합니다.
+            그렇기 때문에 기능 개발 시 이 기능을 사용자가 논리적으로 납득할 수
+            있을지 항상 고민하고, 좋은 사용성을 제공할 수 있도록 노력합니다.
           </p>
         </div>
         <hr style={{ marginLeft: '1em', marginRight: '1em' }} />
@@ -205,7 +215,7 @@ export default function Resume() {
           <h3>React</h3>
           <ul>
             <li>사용자와 복잡하게 상호작용하는 SPA를 개발할 수 있습니다.</li>
-            <li>MobX를 통한 상태 관리에 익숙합니다.</li>
+            <li>React + MobX를 이용한 상태 관리에 익숙합니다.</li>
             <li>Jest를 이용한 테스트 작성 경험이 있습니다.</li>
           </ul>
           <h3>TypeScript / JavaScript</h3>
@@ -221,7 +231,11 @@ export default function Resume() {
           <h2>Others</h2>
           <h3>협업</h3>
           <ul>
-            <li>동료들과 활발히 코드 리뷰를 진행한 경험이 있습니다.</li>
+            <li>
+              팀 동료들과 주간 세미나를 진행하며 개발 및 업무 관련 정보를
+              공유하였습니다.
+            </li>
+            <li>팀 동료들과 활발히 코드 리뷰를 진행하였습니다.</li>
             <li>여러 개발자 및 디자이너와의 협업 경험이 있습니다.</li>
             <li>GitLab을 통한 협업 경험이 있습니다.</li>
           </ul>
@@ -234,7 +248,9 @@ export default function Resume() {
           </ul>
           <h3>C++</h3>
           <ul>
-            <li>C++로 layout algorithm을 설계 및 구현한 경험이 있습니다.</li>
+            <li>
+              C++로 복잡한 layout algorithm을 설계 및 구현한 경험이 있습니다.
+            </li>
           </ul>
         </div>
       </div>
