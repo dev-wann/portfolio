@@ -6,7 +6,7 @@ export default function ToOffice({ page }: { page: number }) {
     <div className={styles.item}>
       <h2>
         <span className={styles.highlight}>ToOffice</span>
-        <span className={styles.affilation}>@TmaxOS</span>
+        <span className={styles.affilation}>@TmaxA&C</span>
       </h2>
       <div className={styles.itemCoverImg}>
         <div>{images.img1}</div>
@@ -23,24 +23,30 @@ export default function ToOffice({ page }: { page: number }) {
           기능 담당)
         </li>
         <li>
-          문서 <span className={styles.highlight}>layout algorithm</span> 및
-          다양한 <span className={styles.highlight}>UI 기능</span> 설계, 개발
+          <span className={styles.highlight}>Document layout algorithm</span> 및
+          10개 이상의{' '}
+          <span className={styles.highlight}>문서 편집 UI 기능</span> 설계, 개발
         </li>
         <li>
           Layout algorithm 로직 개선을 통한{' '}
-          <span className={styles.highlight}>프로그램 성능 개선</span> 진행
+          <span className={styles.highlight}>~30% 프로그램 성능 개선</span>
         </li>
         <li>
           <span className={styles.highlight}>Legacy code refactoring</span> 작업
-          진행
         </li>
         <li>
-          특허청 사업 명세서 작성기 및 한국교육학술정보원(KERIS) 서식 작성기
-          개발 프로젝트 참여
+          다양한 문서 확장자의{' '}
+          <span className={styles.highlight}>parser / writer</span> 구현 (doc,
+          docx, doch, hwp)
         </li>
         <li>
           <span className={styles.highlight}>C++</span>를 사용한 개발 및{' '}
           <span className={styles.highlight}>GitLab</span>을 통한 협업 경험
+        </li>
+
+        <li>
+          특허청 사업 명세서 작성기 및 한국교육학술정보원(KERIS) 서식 작성기
+          개발 프로젝트 참여
         </li>
       </ul>
     </div>
