@@ -54,7 +54,7 @@
 
 @media print {
   @page {
-    margin: 24px auto 16px;
+    margin: 24px auto 20px;
   }
   .navigation {
     display: none;
@@ -68,7 +68,7 @@
 }
 
 .content {
-  margin-bottom: 1.65rem;
+  margin-bottom: 1.8rem;
 }
 .content hr {
   border: 1px solid #e3e8eb;
@@ -94,8 +94,8 @@
   text-underline-position: under;
 }
 .info p {
-  font-size: 1.05em;
-  margin: 0 0 4px 0;
+  margin: 0;
+  font-size: 1.05rem;
 }
 .info a {
   color: black;
@@ -103,7 +103,7 @@
 }
 
 .desc {
-  margin-left: 1rem;
+  margin-left: 1.05rem;
 }
 
 .row {
@@ -113,6 +113,7 @@
 .row p {
   margin: 0;
   word-break: keep-all;
+  font-size: 1.05rem;
 }
 .row h2 {
   margin: 0 0 0.5rem 0;
@@ -145,6 +146,7 @@
 .row_right li {
   padding-bottom: 0.2rem;
   word-break: keep-all;
+  font-size: 1.05rem;
 }
 
 .desc_other {
@@ -160,6 +162,7 @@
 .desc_other p {
   margin: 0 0 0.2rem 0.5rem;
   word-break: keep-all;
+  font-size: 1.05rem;
 }
 .desc_other a {
   text-decoration: none;
@@ -172,4 +175,5 @@
 .desc_other li {
   padding-bottom: 0.2rem;
   word-break: keep-all;
+  font-size: 1.05rem;
 }
