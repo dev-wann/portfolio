@@ -48,7 +48,7 @@ export default function Resume() {
           showNav(false);
       }}
     >
-      <Link href="/home#about">
+      <Link href='/home#about'>
         <button>Go Back</button>
       </Link>
       <h1>Resume</h1>
@@ -99,17 +99,17 @@ export default function Resume() {
           <div style={{ marginRight: '24px' }}>
             <h2 style={{ fontSize: '1.3rem' }}>Contact</h2>
             <p>
-              <Link href="mailto:swcho8220@gmail.com">
+              <Link href='mailto:swcho8220@gmail.com'>
                 Email: swcho8220@gmail.com
               </Link>
               <br />
               Phone: 010-5437-6062
               <br />
-              <Link href="https://github.com/dev-wann">
+              <Link href='https://github.com/dev-wann'>
                 GitHub: https://github.com/dev-wann
               </Link>
               <br />
-              <Link href="https://dev-wann.tistory.com">
+              <Link href='https://dev-wann.tistory.com'>
                 Blog: https://dev-wann.tistory.com
               </Link>
             </p>
@@ -144,7 +144,7 @@ export default function Resume() {
                 <li>MVC 패턴의 client-side 문서 정보 관리 모델 설계 및 개발</li>
                 <li>20개 이상의 문서 편집 UI 기능을 개발</li>
                 <li>
-                  JS 로직 최적화를 통한 clinet-side 문서 편집 성능 개선 (~70%)
+                  JS 로직 최적화를 통한 client-side 문서 편집 성능 개선 (~70%)
                 </li>
                 <li>
                   문서 pagination을 위한 Blink custom layout algorithm 개발
@@ -422,9 +422,9 @@ export default function Resume() {
                 <li>
                   원인: JS 로직 내{' '}
                   <Link
-                    href="http://officeopenxml.com/WPtableGrid.php"
+                    href='http://officeopenxml.com/WPtableGrid.php'
                     style={{ color: 'black', textDecoration: 'none' }}
-                    target="_blank"
+                    target='_blank'
                   >
                     grid column🔗
                   </Link>{' '}
@@ -539,7 +539,7 @@ export default function Resume() {
   );
 
   return (
-    <div className={styles.wrapper} id="wrapper">
+    <div className={styles.wrapper} id='wrapper'>
       {navigation}
       {contents}
       {projectDetails}
